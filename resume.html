@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arish's Resume</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="resume.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1 class="animated-header">Hi Hiring Manager, Here's my number 👇 call me maybe 🤙</h1>
+            <a href="https://www.vecteezy.com/free-vector/sky">Sky Vectors by Vecteezy</a>
+        </div>
+    </header>
+    <main>
+        <section class="section bg-dark-grey">
+            <div class="container resume-container">
+                <h2>Resume 📁</h2>
+                <img src="image/previewResume.jpg" alt="Resume Preview" class="resume-preview">
+                <a href="image/ResumeArish.pdf" download class="download-btn">Download Resume</a>
+            </div>
+        </section>
+        <section id="contact" class="section bg-darker-grey">
+            <div class="container">
+                <h2>Contact 📬</h2>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="send-message-btn">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-contact">
+                <p>
+                    <a href="mailto:acharyaarish@gmail.com">
+                        <i class="fas fa-envelope fa-2x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/arish-acharya-a70679227/" target="_blank">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                    <a href="https://github.com/acharyaarish" target="_blank">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </p>
+            </div>
+            <p>&copy; 2024 Arish Acharya</p>
+            <button class="scroll-to-top" onclick="scrollToTop()">&#8679;</button>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

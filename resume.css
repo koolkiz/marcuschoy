@@ -1,0 +1,280 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Franklin', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content */
+    background: url('image/vector.jpg') no-repeat center / cover; /* Use provided image */
+    color: #ffffff;
+    height: 80vh; /* 80% of viewport height */
+    text-align: center; /* Center text alignment */
+    position: relative;
+}
+
+.header-content a {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    color: #8ad7ef; /* Adjust color as needed to make it visible */
+    font-size: 8px; /* Adjust size as needed */
+    text-decoration: none;
+}
+
+.header-content a:hover{
+    color: whitesmoke;
+}
+
+nav {
+    background-color: rgba(25, 149, 173, 0.8); /* Sync with header */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 0.5em 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.875em;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ecf0f1;
+}
+
+.header-content {
+    max-width: 80%; /* Limit width */
+}
+
+header .animated-header {
+    font-size: 4em; /* Larger font size */
+    margin: 0;
+}
+
+header .animated-text {
+    font-size: 2em; /* Smaller font size */
+    margin: 0;
+}
+
+.section {
+    padding: 4em 0;
+}
+
+.section.bg-dark-grey {
+    background-color: #1995AD; /* Individual color */
+}
+
+.section.bg-darker-grey {
+    background-color: #FA6775; /* Individual color */
+}
+
+.section.bg-custom-pink {
+    background-color: #A1D6E2; /* Individual color */
+}
+
+.section.bg-custom-green {
+    background-color: #F1F1F2; /* Individual color */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.resume-container {
+    text-align: center;
+    margin: 6em auto;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.resume-container h2 {
+    color: #1abc9c;
+    margin-bottom: 1.5em;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.resume-container .resume-preview {
+    border: 2px solid #1abc9c;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.resume-container .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1abc9c;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 20px; /* Add margin-top for spacing */
+}
+
+.resume-container .download-btn:hover {
+    background-color: #16a085;
+    color: #ffffff;
+}
+
+.section.bg-darker-grey#contact h2 {
+    color: rgb(113, 246, 208); 
+}
+
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background: #F1F1F2; /* Individual color */
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border: 2px solid #1abc9c;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #1c2833;
+    color: #ecf0f1;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder {
+    color: #95a5a6;
+}
+
+.contact-form .send-message-btn {
+    padding: 15px 30px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.contact-form .send-message-btn:hover {
+    background-color: #16a085;
+}
+
+.scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.scroll-to-top:hover {
+    background-color: #16a085;
+}
+
+footer {
+    background:#98cfda; /* Sync with header */
+    color: #333;
+    text-align: center;
+    padding: 4em 0;
+    position: relative;
+}
+
+footer .container.footer-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: bold; /* Bolder footer text */
+}
+
+.footer-contact {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer-contact p a {
+    margin: 0 10px;
+    color: #3498db; /* Modern looking color for footer icons */
+    text-decoration: none;
+    transition: transform 0.3s; /* Adding hover effect */
+}
+
+.footer-contact p a:hover {
+    transform: scale(1.2); /* Magnify on hover */
+    color: #2980b9;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #16a085;
+}
+
+.fas, .fab {
+    margin-left: 10px;
+    color: #3498db;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.fas:hover, .fab:hover {
+    color: #2980b9;
+    transform: scale(1.2); /* Magnify on hover */
+}
