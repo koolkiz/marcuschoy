@@ -120,21 +120,21 @@ const Experience = () => {
 
   const experiences = [
     {
-      logo: '/img/austriathlon-logo.png',
+      logo: `${process.env.PUBLIC_URL}/img/austriathlon-logo.png`,
       date: 'March 2024 – July 2024',
       company: 'AusTriathlon',
       title: 'Data Analyst Intern',
       description: 'Worked with a data analyst to automate the processing of cycling race data from Australian athletes competing abroad using R and Power BI. Generated detailed race reports with visualizations of laps and metrics, enhancing player performance and supporting strategic decisions.',
     },
     {
-      logo: '/img/shoesandsox-logo.png',
+      logo: `${process.env.PUBLIC_URL}/img/shoesandsox-logo.png`,
       date: 'July 2022 – May 2024',
       company: 'Shoes and Sox',
       title: 'Sales',
       description: 'Exceeded sales targets by 5-15%, driving revenue growth. Enhanced communication and customer service skills, including regular discussions with the regional manager to optimize store hours and reduce unnecessary costs. Played a key role in creating a customer loyalty program, increasing repeat business and customer engagement.',
     },
     {
-      logo: '/img/nepaloilcorp-logo.png',
+      logo: `${process.env.PUBLIC_URL}/img/nepaloilcorp-logo.png`,
       date: 'November 2020 – November 2021',
       company: 'Nepal Oil Corporation',
       title: 'IT Support',

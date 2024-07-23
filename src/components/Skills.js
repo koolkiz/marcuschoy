@@ -99,7 +99,7 @@ const Skills = () => {
         <SkillsList>
           {skills.map((skill, index) => (
             <Skill key={index}>
-              <SkillImage src={`/img/${skill.name.toLowerCase()}.png`} alt={skill.name} />
+              <SkillImage src={`${process.env.PUBLIC_URL}/img/${skill.name.toLowerCase()}.png`} alt={skill.name} />
               {skill.name}
               <ProgressBar>
                 <Progress $level={skill.level}></Progress>

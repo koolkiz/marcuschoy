@@ -121,10 +121,6 @@ const CloseIconContainer = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
-
-  @media (min-width: 769px) {
-    display: none;
-  }
 `;
 
 const CloseIcon = styled(FaTimes)`
@@ -144,7 +140,7 @@ const Navbar = () => {
     <Nav>
       <NavContainer>
         <NavLogo>
-          <LogoImage src="/img/logo.png" alt="Logo" />
+          <LogoImage src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="Logo" />
           <LogoText>Arish's Portfolio</LogoText>
         </NavLogo>
         <HamburgerIcon onClick={toggleMenu}>

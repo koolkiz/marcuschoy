@@ -167,7 +167,7 @@ const Projects = () => {
         <ProjectsList>
           {projects.map((project, index) => (
             <Project key={index}>
-              <ProjectImage src={`/img/${project.name.toLowerCase().replace(/\s+/g, '-')}.png`} alt={project.name} />
+              <ProjectImage src={`${process.env.PUBLIC_URL}/img/${project.name.toLowerCase().replace(/\s+/g, '-')}.png`} alt={project.name} />
               <ProjectLink href={project.link} target="_blank" rel="noopener noreferrer">{project.name}</ProjectLink>
               <ProjectDescription>{project.description}</ProjectDescription>
               <Tags>

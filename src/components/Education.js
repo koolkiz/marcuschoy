@@ -76,15 +76,15 @@ const Heading = styled(motion.h2)`
 const Education = () => {
   const education = [
     {
-      logo: '/img/university-logo.png',
+      logo: `${process.env.PUBLIC_URL}/img/university-logo.png`,
       degree: 'Master of Data Science',
       institution: 'University of Canberra',
       date: 'July 2022 – June 2024',
     },
     {
-      logo: '/img/another-university-logo.png',
+      logo: `${process.env.PUBLIC_URL}/img/another-university-logo.png`,
       degree: 'Bachelor of Computer Networking and IT Security',
-      institution: 'Islington College (London Metropoliton University)',
+      institution: 'Islington College (London Metropolitan University)',
       date: 'July 2017 – March 2020',
     },
   ];

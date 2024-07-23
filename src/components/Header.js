@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import useTypewriter from './hooks/useTypewriter';
 
-const images = ['/img/vector.jpg', '/img/vector2.jpg', '/img/vector3.jpg'];
+const images = [
+  `${process.env.PUBLIC_URL}/img/vector.jpg`,
+  `${process.env.PUBLIC_URL}/img/vector2.jpg`,
+  `${process.env.PUBLIC_URL}/img/vector3.jpg`
+];
 
 const fadeIn = keyframes`
   0% { opacity: 0; }
@@ -23,7 +27,7 @@ const HeaderContainer = styled.header`
   position: relative;
   transition: background-image 3s ease-in-out;
   animation: ${fadeIn} 3s ease-in-out;
-  
+
   @media (max-width: 768px) {
     height: 60vh;
   }
@@ -125,7 +129,7 @@ const DimmingOverlay = styled.div`
 `;
 
 const Header = () => {
-  const { text, color } = useTypewriter(['Data Analytics', 'Research','Cloud Services'], 70, 50, 800);
+  const { text, color } = useTypewriter(['Data Analytics', 'Research', 'Cloud Services'], 70, 50, 800);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -150,11 +154,11 @@ const Header = () => {
         </AnimatedTextContainer>
         <ButtonContainer>
           <StyledButton
-            href="/img/arish_resume.pdf"
+            href={`${process.env.PUBLIC_URL}/img/arish_resume.pdf`}
             $bgColor="#1e90ff"
             $hoverColor="#1c86ee"
           >
-            <img src="/img/resume-icon.png" alt="Resume Icon" width="20" height="20" />
+            <img src={`${process.env.PUBLIC_URL}/img/resume-icon.png`} alt="Resume Icon" width="20" height="20" />
             View Resume
           </StyledButton>
           <StyledButton
@@ -162,7 +166,7 @@ const Header = () => {
             $bgColor="#F96167"
             $hoverColor="#DC3545"
           >
-            <img src="/img/github-icon.png" alt="GitHub Icon" width="20" height="20" />
+            <img src={`${process.env.PUBLIC_URL}/img/github-icon.png`} alt="GitHub Icon" width="20" height="20" />
             View GitHub
           </StyledButton>
         </ButtonContainer>
