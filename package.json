@@ -1,4 +1,5 @@
 {
+  "homepage": "https://acharyaarish.github.io/arish.app",
   "name": "arish-portfolio",
   "version": "0.1.0",
   "private": true,
@@ -46,7 +47,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://acharyaarish.github.io/arish.app",
   "devDependencies": {
     "autoprefixer": "^10.4.19",
     "gh-pages": "^6.1.1",
