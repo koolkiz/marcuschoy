@@ -76,7 +76,7 @@ const NavLink = styled(Link)`
   font-size: 0.875em;
   font-weight: 600;
   position: relative;
-  cursor: pointer; /* Add cursor pointer */
+  cursor: pointer;
 
   &:hover {
     color: #f39c12;
@@ -107,14 +107,14 @@ const HamburgerIcon = styled.div`
 
   @media (max-width: 768px) {
     display: block;
-    position: absolute;
-    top: 15px;
+    position: fixed;
+    top: 10px; /* Adjusted top position */
     right: 20px;
   }
 `;
 
 const CloseIconContainer = styled.div`
-  display: none; /* Initially hidden */
+  display: flex;
   justify-content: flex-end;
   width: 100%;
   padding: 0.5em;
@@ -123,8 +123,8 @@ const CloseIconContainer = styled.div`
   top: 10px;
   right: 10px;
 
-  @media (max-width: 768px) {
-    display: flex; /* Only show on mobile */
+  @media (min-width: 769px) {
+    display: none;
   }
 `;
 

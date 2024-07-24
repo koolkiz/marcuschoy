@@ -14,12 +14,18 @@ const Container = styled.div`
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 1em;
+
+  @media (max-width: 768px) {
+    padding: 0 1.5em; /* Adjust the padding for mobile devices */
+  }
 `;
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 const Input = styled.input`
