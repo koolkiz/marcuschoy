@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaGithub } from 'react-icons/fa';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactSection = styled.section`
   padding: 4em 1em;
@@ -106,19 +108,43 @@ const Contact = () => {
     })
     .then(response => {
       if (response.ok) {
-        alert('Message sent successfully!');
+        toast.success('Message sent successfully!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
         setFormData({
           name: '',
           email: '',
           message: ''
         });
       } else {
-        alert('Failed to send message.');
+        toast.error('Failed to send message.', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
       }
     })
     .catch(error => {
       console.error('Error:', error);
-      alert('Failed to send message.');
+      toast.error('Failed to send message.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     });
   };
 
@@ -157,6 +183,7 @@ const Contact = () => {
         </GitHubLink>
         <Footer>&copy; 2023 Arish Acharya - All rights reserved.</Footer>
       </Container>
+      <ToastContainer />
     </ContactSection>
   );
 };

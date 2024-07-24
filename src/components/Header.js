@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import useTypewriter from './hooks/useTypewriter';
 
 const images = [
@@ -8,16 +8,12 @@ const images = [
   `${process.env.PUBLIC_URL}/img/vector3.jpg`
 ];
 
-const fadeIn = keyframes`
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-`;
-
 const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url(${images[0]});
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -25,8 +21,6 @@ const HeaderContainer = styled.header`
   text-align: center;
   padding: 0 2rem;
   position: relative;
-  transition: background-image 3s ease-in-out;
-  animation: ${fadeIn} 3s ease-in-out;
 
   @media (max-width: 768px) {
     height: 60vh;
@@ -116,6 +110,20 @@ const CreditLink = styled.a`
   }
 `;
 
+const BackgroundImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: ${props => `url(${props.src})`};
+  background-size: cover;
+  background-position: center;
+  opacity: ${props => (props.active ? 1 : 0)};
+  transition: opacity 15s ease-in-out;
+  z-index: 1; /* Ensure the overlay is above the background but below the text and buttons */
+`;
+
 const DimmingOverlay = styled.div`
   position: absolute;
   top: 0;
@@ -123,7 +131,7 @@ const DimmingOverlay = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, ${props => (props.$dim ? 0.4 : 0)});
-  transition: background 3s ease-in-out;
+  transition: background 15s ease-in-out; /* Slow transition for dimming */
   pointer-events: none;
   z-index: 1; /* Ensure the overlay is above the background but below the text and buttons */
 `;
@@ -135,7 +143,7 @@ const Header = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 12000); // Change image every 12 seconds
+    }, 60000); // Change image every 60 seconds
 
     return () => clearInterval(intervalId);
   }, []);
@@ -143,7 +151,10 @@ const Header = () => {
   const isDimmed = currentImageIndex !== 0;
 
   return (
-    <HeaderContainer style={{ backgroundImage: `url(${images[currentImageIndex]})` }}>
+    <HeaderContainer>
+      {images.map((image, index) => (
+        <BackgroundImage key={index} src={image} active={index === currentImageIndex} />
+      ))}
       <DimmingOverlay $dim={isDimmed} />
       <HeaderContent>
         <FixedText>

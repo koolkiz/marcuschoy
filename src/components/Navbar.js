@@ -76,6 +76,7 @@ const NavLink = styled(Link)`
   font-size: 0.875em;
   font-weight: 600;
   position: relative;
+  cursor: pointer; /* Add cursor pointer */
 
   &:hover {
     color: #f39c12;
@@ -113,7 +114,7 @@ const HamburgerIcon = styled.div`
 `;
 
 const CloseIconContainer = styled.div`
-  display: flex;
+  display: none; /* Initially hidden */
   justify-content: flex-end;
   width: 100%;
   padding: 0.5em;
@@ -121,6 +122,10 @@ const CloseIconContainer = styled.div`
   position: absolute;
   top: 10px;
   right: 10px;
+
+  @media (max-width: 768px) {
+    display: flex; /* Only show on mobile */
+  }
 `;
 
 const CloseIcon = styled(FaTimes)`
@@ -147,11 +152,9 @@ const Navbar = () => {
           <FaBars />
         </HamburgerIcon>
         <NavMenu $isOpen={isOpen}>
-          {isOpen && (
-            <CloseIconContainer>
-              <CloseIcon onClick={toggleMenu} />
-            </CloseIconContainer>
-          )}
+          <CloseIconContainer>
+            <CloseIcon onClick={toggleMenu} />
+          </CloseIconContainer>
           <NavItem>
             <NavLink to="about" smooth={true} duration={500} onClick={toggleMenu}>About</NavLink>
           </NavItem>
