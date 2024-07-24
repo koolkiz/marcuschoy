@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Arish's Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to my personal portfolio website! This project showcases my skills, projects, and experience as a data science enthusiast.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [About](#about)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contact](#contact)
 
-### `npm start`
+## About
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This portfolio is a single-page application built with React. It includes sections for my skills, projects, experience, education, and a contact form. The design is modern, interactive, and responsive, ensuring a seamless experience on both desktop and mobile devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Interactive Header**: Dynamic typewriter effect and background image transitions.
+- **Skills Section**: Animated skill progress bars.
+- **Projects Section**: Detailed descriptions and tags for each project.
+- **Experience Section**: Slide-up animations for job descriptions.
+- **Education Section**: Hover effects for educational details.
+- **Contact Form**: Integrated with Formspree for email submissions with modern notifications using react-toastify.
+- **Responsive Design**: Ensures compatibility across various devices and screen sizes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used
 
-### `npm run build`
+- **React**: JavaScript library for building user interfaces.
+- **Styled-components**: For styling React components.
+- **Framer Motion**: For animations.
+- **React Scroll**: For smooth scrolling.
+- **React Icons**: For icons.
+- **Formspree**: For handling form submissions.
+- **React-toastify**: For notifications.
+- **GitHub Pages**: For deployment.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```sh
+   git clone https://github.com/acharyaarish/arish.app.git
+   ```
 
-### `npm run eject`
+2. **Navigate to the project directory:**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```sh
+   cd arish.app
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Install dependencies:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```sh
+   npm install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+1. **Run the application locally:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```sh
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   This will start the development server and open the application in your default web browser at `http://localhost:3000`.
 
-### Code Splitting
+2. **Build the application for production:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   ```sh
+   npm run build
+   ```
 
-### Analyzing the Bundle Size
+   This will create an optimized production build in the `build` directory.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. **Deploy to GitHub Pages:**
 
-### Making a Progressive Web App
+   ```sh
+   npm run deploy
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contact
 
-### Advanced Configuration
+If you have any questions, feel free to reach out:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **GitHub**: [acharyaarish](https://github.com/acharyaarish)
