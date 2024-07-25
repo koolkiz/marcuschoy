@@ -1,101 +1,22 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import {
+  Box,
+  Container,
+  Heading,
+  Input,
+  Textarea,
+  Button,
+  Link,
+  Flex,
+  useToast,
+  VStack,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-const ContactSection = styled.section`
-  padding: 4em 1em;
-  background-color: #25476A;
-  color: #fff;
-`;
-
-const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 1em;
-
-  @media (max-width: 768px) {
-    padding: 0 1.5em; /* Adjust the padding for mobile devices */
-  }
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-`;
-
-const Input = styled.input`
-  margin: 0.5em 0;
-  padding: 0.75em;
-  width: 100%;
-  max-width: 400px;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.2s;
-
-  &:focus {
-    background-color: #f0f0f0;
-  }
-`;
-
-const TextArea = styled.textarea`
-  margin: 0.5em 0;
-  padding: 0.75em;
-  width: 100%;
-  max-width: 400px;
-  height: 100px;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.2s;
-
-  &:focus {
-    background-color: #f0f0f0;
-  }
-`;
-
-const Button = styled.button`
-  padding: 0.75em 1.5em;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
-
-const GitHubLink = styled.a`
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 1.5em;
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.2s;
-
-  &:hover {
-    color: #ccc;
-  }
-`;
-
-const Footer = styled.footer`
-  margin-top: 40px;
-  font-size: 0.9em;
-  color: #ccc;
-`;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const toast = useToast();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -107,90 +28,130 @@ const Contact = () => {
     const formUrl = 'https://formspree.io/f/mvgpzrlw';
     fetch(formUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(formData)
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
     })
-    .then(response => {
-      if (response.ok) {
-        toast.success('Message sent successfully!', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
+      .then((response) => {
+        if (response.ok) {
+          toast({
+            title: 'Message sent.',
+            description: 'Your message was sent successfully!',
+            status: 'success',
+            duration: 5000,
+            isClosable: true,
+          });
+          setFormData({ name: '', email: '', message: '' });
+        } else {
+          toast({
+            title: 'Error.',
+            description: 'Failed to send message.',
+            status: 'error',
+            duration: 5000,
+            isClosable: true,
+          });
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        toast({
+          title: 'Error.',
+          description: 'Failed to send message.',
+          status: 'error',
+          duration: 5000,
+          isClosable: true,
         });
-        setFormData({
-          name: '',
-          email: '',
-          message: ''
-        });
-      } else {
-        toast.error('Failed to send message.', {
-          position: "top-right",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        });
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      toast.error('Failed to send message.', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
       });
-    });
   };
 
+  // Define color scheme based on the provided palettes
+  const bgColor = useColorModeValue('#D1D5DB', '#2A2A2A'); // Slightly darker background
+  const textColor = useColorModeValue('#333', '#E2E8F0');
+  const borderColor = useColorModeValue('#cccccc', '#555555');
+  const inputBg = useColorModeValue('#fff', '#2D3748');
+  const inputFocusBorder = useColorModeValue('#3182ce', '#90CDF4');
+
   return (
-    <ContactSection id="contact">
-      <Container>
-        <h2>Contact 📬</h2>
-        <Form onSubmit={handleSubmit}>
-          <Input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <Input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <TextArea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-          <Button type="submit">Send Message 💬</Button>
-        </Form>
-        <GitHubLink href="https://github.com/acharyaarish" target="_blank">
-          <FaGithub /> GitHub
-        </GitHubLink>
-        <Footer>&copy; 2023 Arish Acharya - All rights reserved.</Footer>
+    <Box
+      as="section"
+      bg={bgColor}
+      color={textColor}
+      py={20}
+      id="contact"
+      borderRadius="lg"
+      boxShadow="lg"
+    >
+      <Container maxW="container.md" textAlign="center">
+        <Heading as="h2" size="xl" mb={10} color={textColor} fontWeight="bold">
+          Get in Touch 📬
+        </Heading>
+        <form onSubmit={handleSubmit}>
+          <VStack spacing={6} align="stretch">
+            <Input
+              placeholder="Your Name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              borderColor={borderColor}
+              bg={inputBg}
+              _hover={{ borderColor: inputFocusBorder }}
+              _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
+              isRequired
+            />
+            <Input
+              placeholder="Your Email"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              borderColor={borderColor}
+              bg={inputBg}
+              _hover={{ borderColor: inputFocusBorder }}
+              _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
+              isRequired
+            />
+            <Textarea
+              placeholder="Your Message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              borderColor={borderColor}
+              bg={inputBg}
+              _hover={{ borderColor: inputFocusBorder }}
+              _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
+              isRequired
+            />
+          </VStack>
+          <Button
+            type="submit"
+            colorScheme="teal"
+            bg="#479761"
+            _hover={{ bg: '#367d5b', transform: 'scale(1.05)' }}
+            size="lg"
+            mt={8}
+            isFullWidth
+            transition="all 0.3s"
+          >
+            Send Message 💬
+          </Button>
+        </form>
+        <Flex justify="center" mt={8}>
+          <Link href="https://github.com/acharyaarish" isExternal>
+            <Button
+              leftIcon={<FaGithub />}
+              colorScheme="gray"
+              variant="ghost"
+              fontSize="2xl"
+              _hover={{ color: 'teal.500' }}
+            >
+              GitHub
+            </Button>
+          </Link>
+        </Flex>
+        <Box mt={8} fontSize="sm" color={textColor}>
+          &copy; 2023 Arish Acharya - All rights reserved.
+        </Box>
       </Container>
-      <ToastContainer />
-    </ContactSection>
+    </Box>
   );
 };
 

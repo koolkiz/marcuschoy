@@ -1,90 +1,119 @@
 import React from 'react';
-import styled from 'styled-components';
+import {
+  Box,
+  Container,
+  Heading,
+  Text,
+  Image,
+  SimpleGrid,
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-const AboutSection = styled.section`
-  padding: 4em 1em;
-  background-color: #002349;
-  color: #fff;
-  font-family: 'Poppins', sans-serif;
-`;
-
-const Container = styled.div`
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-`;
-
-const Heading = styled(motion.h2)`
-  font-size: 2.5em;
-  margin-bottom: 0.5em;
-`;
-
-const SubHeading = styled.h3`
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: #f39c12;
-`;
-
-const Description = styled.p`
-  font-size: 1.2em;
-  line-height: 1.5;
-  margin-bottom: 2em;
-`;
-
-const GifImage = styled.img`
-  width: 100px;
-  height: 100px;
-  margin: 0.5em;
-  border-radius: 10px;
-`;
-
-const Joke = styled.p`
-  font-size: 1.1em;
-  color: #fff;
-  margin: 1em 0;
-  font-style: italic;
-`;
-
-const AnimatedText = styled(motion.div)`
-  font-size: 1.2em;
-  color: #FFEB3B;
-  margin-top: 20px;
-`;
-
 const About = () => {
+  // Define color scheme based on the provided palettes
+  const bg = useColorModeValue('#f0f4f8', '#19181A'); // Light or Dark background color
+  const textColor = useColorModeValue('#19181A', '#E2E8F0');
+  const headingColor = useColorModeValue('#E7717D', '#CEBC81');
+  const subHeadingColor = useColorModeValue('#CEBC81', '#FFD700');
+  const descriptionColor = useColorModeValue('#333', '#ddd');
+  const highlightColor = useColorModeValue('#A16E83', '#FFD700');
+
+  // Animation variants for the container transitions
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   return (
-    <AboutSection id="about">
-      <Container>
+    <Box
+      id="about"
+      bg={bg}
+      color={textColor}
+      py={16} // Increased padding at the top and bottom
+      as={motion.div}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      transition={{ duration: 0.5, ease: 'easeInOut' }}
+      boxShadow="lg"
+      borderRadius="lg"
+      overflow="hidden"
+    >
+      <Container maxW="container.lg" textAlign="center" py={0}>
         <Heading
-          initial={{ opacity: 0, y: -50 }}
+          as={motion.h2}
+          size="2xl"
+          mb={6}
+          color={headingColor}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           About Me <span role="img" aria-label="wave">👋</span>
         </Heading>
-        <SubHeading>
+        <Text fontSize="xl" mb={4} color={subHeadingColor} fontWeight="semibold">
           Data Science Enthusiast <span role="img" aria-label="computer">💻</span>
-        </SubHeading>
-        <Description>
-          I'm Arish, a data science student who loves playing with datasets. I turn data into gold for companies but somehow not for myself (lol). My dream? To buy a Porsche 🏎️ and retire early so I can be like my pug 🐶 : happy 😺, eating, sleeping 😴, and running 🏃‍♂️ around.
-        </Description>
-        <GifImage src="https://media.giphy.com/media/3o6Zt8MgUuvSbkZYWc/giphy.gif" alt="Data Enthusiast" />
-        <GifImage src="https://media.giphy.com/media/l0HlN5tZoRNC6O5kc/giphy.gif" alt="Coding Fun" />
-        <GifImage src="https://media.giphy.com/media/3o6Zt6ML6BklcajjsA/giphy.gif" alt="Pug Running" />
-        <GifImage src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Funny Coding" />
-        <Joke>
-          Why did the data scientist go broke? Because he couldn't find his significant other! <span role="img" aria-label="laugh">😂</span>
-        </Joke>
-        <AnimatedText
+        </Text>
+        <Text fontSize="lg" mb={10} color={descriptionColor} maxW="container.md" mx="auto">
+          I'm Arish, a data science student passionate about transforming data into actionable insights. I specialize in <Text as="span" fontWeight="bold" color={highlightColor}>Data Analytics, Research, and Cloud Services</Text>. My goal is to use data to drive strategic decisions and create impactful solutions.
+        </Text>
+        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mb={6}>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Image
+              as={motion.img}
+              src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+              alt="Cat Typing"
+              borderRadius="lg"
+              boxSize="150px"
+              objectFit="cover"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            />
+            <Text mt={2} color={descriptionColor}>Hard at work!</Text>
+          </Box>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Image
+              as={motion.img}
+              src="https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif"
+              alt="Data Analysis"
+              borderRadius="lg"
+              boxSize="150px"
+              objectFit="cover"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            />
+            <Text mt={2} color={descriptionColor}>Data crunching time!</Text>
+          </Box>
+          <Box display="flex" flexDirection="column" alignItems="center">
+            <Image
+              as={motion.img}
+              src="https://media.giphy.com/media/3o6Zt8MgUuvSbkZYWc/giphy.gif"
+              alt="Enjoying Data"
+              borderRadius="lg"
+              boxSize="150px"
+              objectFit="cover"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.9 }}
+            />
+            <Text mt={2} color={descriptionColor}>Having fun with data!</Text>
+          </Box>
+        </SimpleGrid>
+        <Text
+          as={motion.p}
+          fontSize="lg"
+          color={highlightColor}
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0, 1] }}
-          transition={{ repeat: Infinity, duration: 3 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.9 }}
         >
           "To analyze or not to analyze, that is the question!" <span role="img" aria-label="thinking">🤔</span>
-        </AnimatedText>
+        </Text>
       </Container>
-    </AboutSection>
+    </Box>
   );
 };
 

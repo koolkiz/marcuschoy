@@ -4,14 +4,17 @@ const useTypewriter = (words, typeSpeed = 70, deleteSpeed = 50, delay = 800) => 
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loop, setLoop] = useState(0);
-  const [color, setColor] = useState('#f39c12');
+  const [color, setColor] = useState('#FFD700'); // Initial color (Bright Yellow)
 
   useEffect(() => {
     const handleType = () => {
       const currentIndex = loop % words.length;
       const fullText = words[currentIndex];
       setText(isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1));
-      setColor(isDeleting ? '#f39c12' : '#1e90ff'); // Change color based on deleting state
+
+      // Update color based on typing/deleting state and index
+      const vibrantColors = ['#FFD700', '#FFA500', '#4eea0a']; // Bright Yellow, Bright Orange, Bright Green
+      setColor(vibrantColors[currentIndex % vibrantColors.length]);
 
       if (!isDeleting && text === fullText) {
         setTimeout(() => setIsDeleting(true), delay);
