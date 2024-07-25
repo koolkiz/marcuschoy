@@ -34,7 +34,7 @@ const Navbar = () => {
         <Flex alignItems="center">
           <ChakraLink as={Link} to="header" smooth duration={500} offset={-50}>
             <Image
-              src={`${process.env.PUBLIC_URL}/img/logo.png`}
+              src={`${process.env.PUBLIC_URL}/img/logo-updated.png`}
               alt="Logo"
               boxSize="60px" // Increased size slightly
               maxH="100%" // Ensure the logo fits within the navbar height

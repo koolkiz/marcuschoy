@@ -7,7 +7,7 @@ const Header = () => {
   const { text } = useTypewriter(['Data Analytics', 'Research', 'Cloud Services'], 70, 50, 800);
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const bgImage = useColorModeValue(`${process.env.PUBLIC_URL}/img/vector3.jpg`, `${process.env.PUBLIC_URL}/img/vector2.jpg`);
+  const bgImage = useColorModeValue(`${process.env.PUBLIC_URL}/img/vector5.jpg`, `${process.env.PUBLIC_URL}/img/vector4.jpg`);
   const headingColor = useColorModeValue('#19181A', '#FFD700'); // Dark color for light mode, bright yellow for dark mode
   const subheadingColor = useColorModeValue('#333', '#CEBC81'); // Dark color for light mode, lighter color for dark mode
   const textColor = useColorModeValue('#333', '#E0E0E0'); // Dark color for light mode, light gray for dark mode
