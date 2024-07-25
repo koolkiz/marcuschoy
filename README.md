@@ -18,17 +18,18 @@ This portfolio is a single-page application built with React. It includes sectio
 ## Features
 
 - **Interactive Header**: Dynamic typewriter effect and background image transitions.
-- **Skills Section**: Animated skill progress bars.
+- **Skills Section**: Display of skills with icons and descriptions.
 - **Projects Section**: Detailed descriptions and tags for each project.
-- **Experience Section**: Slide-up animations for job descriptions.
-- **Education Section**: Hover effects for educational details.
+- **Experience Section**: Slide-up animations and centered job titles for job descriptions.
+- **Education Section**: Hover effects and detailed information on educational background.
 - **Contact Form**: Integrated with Formspree for email submissions with modern notifications using react-toastify.
 - **Responsive Design**: Ensures compatibility across various devices and screen sizes.
+- **Light/Dark Mode Toggle**: Allows users to switch between light and dark themes.
 
 ## Technologies Used
 
 - **React**: JavaScript library for building user interfaces.
-- **Styled-components**: For styling React components.
+- **Chakra UI**: Component library for React.
 - **Framer Motion**: For animations.
 - **React Scroll**: For smooth scrolling.
 - **React Icons**: For icons.
@@ -78,7 +79,7 @@ This portfolio is a single-page application built with React. It includes sectio
 
    ```sh
    npm run deploy
-   ```
+   
 
 ## Contact
 
