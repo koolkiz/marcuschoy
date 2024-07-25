@@ -36,9 +36,9 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Data Analyst Intern',
       description: [
-        'Automated the processing of cycling race data using R and Power BI.',
-        'Generated detailed race reports with visualizations of laps and metrics.',
-        'Enhanced player performance and supported strategic decisions.',
+        'Worked under the guidance of a coach involved with the Australian Olympic team, gaining valuable insights into high-level athletic performance analysis.',
+        'Generated detailed visual reports on race laps and athlete performance metrics, aiding coaches in strategic planning and performance enhancement.',
+        'Utilized R and Power BI to automate the processing of cycling race data generated from power meter',
       ],
     },
     {
@@ -48,10 +48,9 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Sales',
       description: [
-        'Exceeded sales targets by 5-15%, driving revenue growth.',
-        'Enhanced communication and customer service skills.',
-        'Optimized store hours and reduced unnecessary costs.',
-        'Created a customer loyalty program, increasing repeat business.',
+        'Sharpened communication, interpersonal, and negotiating skills, leading to improved customer interactions and satisfaction.',
+        'Utilized data science techniques to analyze customer behavior and preferences, which informed the creation of a successful customer loyalty program, boosting repeat business.',
+        'Optimized store hours and implemented cost-cutting measures, enhancing overall business efficiency.',
       ],
     },
     {
@@ -64,6 +63,7 @@ const Experience = () => {
         'Key contributor to Nepal\'s first ERP implementation project.',
         'Provided SAP Business One support and training for non-technical staff.',
         'Implemented ERP systems and managed ITIL practices, streamlining operations.',
+        'I led a team to manage IT systems and oversee networking across multiple branches, ensuring seamless business operations.',
       ],
     },
     {
@@ -73,9 +73,10 @@ const Experience = () => {
       location: 'Kathmandu, Nepal',
       title: 'Network Engineer Intern',
       description: [
-        'Maintained networking infrastructure by analyzing routers and switches.',
-        'Created VLANs and improved network infrastructure.',
-        'Learned to implement LAN/WAN, configure networking devices, and modernize office systems.',
+        'Gained hands-on experience in implementing LAN/WAN, configuring networking devices, and modernizing office systems to meet current technological standards.',
+        'Provided tailored access control based on user roles to enhance security and operational efficiency',
+        'Created VLANs to segment network traffic and improve overall infrastructure reliability.',
+        'Ensured optimal performance by regularly analyzing routers and switches.',
       ],
     },
   ];

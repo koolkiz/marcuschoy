@@ -16,48 +16,47 @@ const projects = [
   {
     name: 'Python Dashboard',
     link: 'https://github.com/acharyaarish/Python_Dashboard',
-    description: 'Wildlife Incidents Dashboard using Python (Dash and Plotly), hosted on AWS EC2. Analysis of incident hotspots, peak times, and seasons.',
+    description: 'Wildlife Incident Analysis Report for the Australian Capital Territory (ACT) spans from 2016 to 2024, offering in-depth insights into wildlife-related incidents. Made using Python Dash and Plotly package and hosted in AWS EC2.',
     tags: ['Python', 'Dashboard', 'AWS'],
   },
   {
     name: 'Dog Breed Detector',
     link: 'https://github.com/acharyaarish/dog_breed_detector',
-    description: 'Dog Breed Detector Game using Node.js for backend and React for frontend via DogCeo API.',
+    description: 'The Dog Breed Detector is a web application that challenges users to identify dog breeds from images provided by the Dog CEO API. Built with a React frontend, Node.js backend and SQLite for database.',
     tags: ['Node.js', 'React', 'API'],
-  },
-  {
-    name: 'IoT Project',
-    link: 'https://github.com/acharyaarish/Excel_Dashboard',
-    description: 'IoT system that captures nearby human images and alerts users through text and email.',
-    tags: ['IoT', 'Security', 'Automation'],
   },
   {
     name: 'Wildlife Incidents Report',
     link: 'https://github.com/acharyaarish/Python_Dashboard/blob/main/Wildlife%20Incidents%20ACT.pdf',
-    description: 'Analysis of Wildlife Incidents (2016-24) from ACT. The report covers incident hotspots, peak times, and species involved.',
+    description: 'This report offers an incisive look at kangaroo incidents in the Australian Capital Territory from 2016 to 2024, identifying key hotspots, peak times, and the species involved. It provides essential insights for effectively managing and reducing these occurrences.',
     tags: ['Report', 'Analysis', 'Wildlife'],
+  },
+  {
+    name: 'IoT Project',
+    link: 'https://github.com/acharyaarish/Excel_Dashboard',
+    description: 'I developed this IoT project to enhance home security, utilizing a Raspberry Pi and camera module to detect nearby human activity. By integrating Python cv2 package, the system captures images and sends alerts through text and email when someone approaches the main entrance.',
+    tags: ['IoT', 'Security', 'Automation'],
   },
   {
     name: 'Excel Dashboard',
     link: 'https://github.com/acharyaarish/Excel_Dashboard',
-    description: 'Excel Dashboard for Supermarket using PivotTable showcasing an in-depth analysis of sales.',
+    description: 'I created this Excel Dashboard for my university project to analyze supermarket sales. It utilizes a PivotTable to organize, summarize, and visually display transaction data across three sheets: All Simulated Data, Dashboard, and Data Dashboard. This tool simplifies retail insights and aids in effective decision-making.',
     tags: ['Excel', 'Dashboard', 'Sales'],
   },
   {
     name: 'Professor',
     link: 'https://paldip.com/',
-    description: 'Assisted my University Professor with testing, debugging and adding new features for his Edtech Platform.',
+    description: 'Assisted my University Professor with testing, debugging and adding new features for his Edtech Platform. We implemented QR system for attendance, PostHog for Analytics and fixed minor bugs.',
     tags: ['Edtech', 'Testing', 'Debugging'],
   },
 ];
 
 const Projects = () => {
-  // Define color scheme based on the provided palettes
   const bgColor = useColorModeValue('#B4D8E7', '#1A202C'); // Lighter container background color
   const textColor = useColorModeValue('#2D3748', '#E2E8F0');
   const linkColor = useColorModeValue('#00796B', '#90CDF4');
-  const cardBgColor = useColorModeValue('#F9F9F9', '#334552'); // Light card background color
-  const cardHoverBgColor = useColorModeValue('#E8F0FA', '#3B3F44'); // Slightly lighter hover background color
+  const cardBgColor = useColorModeValue('#FFFFFF', '#334552'); // Light card background color
+  const cardHoverBgColor = useColorModeValue('#e8f0f8', '#3B3F44'); // Slightly lighter hover background color
   const tagBgColor = useColorModeValue('#00796B', '#577b91');
 
   return (
@@ -91,7 +90,7 @@ const Projects = () => {
                     alt={project.name}
                     borderRadius="md"
                     objectFit="cover"
-                    height="150px"
+                    height="200px" // Increased image height for better visibility
                     width="100%"
                   />
                   <Box>
