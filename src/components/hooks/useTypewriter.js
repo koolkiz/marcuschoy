@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useTypewriter = (words, typeSpeed = 70, deleteSpeed = 50, delay = 800) => {
+const useTypewriter = (words, typeSpeed = 30, deleteSpeed = 20, delay = 500) => {
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loop, setLoop] = useState(0);

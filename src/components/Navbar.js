@@ -9,12 +9,15 @@ import {
   Text,
   Image,
   HStack,
+  useColorMode,
+  Tooltip,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
   const bgColor = '#19181A'; // Dark background
   const primaryColor = '#CEBC81'; // Light Yellow for active and hover states
   const textColor = '#ECF0F1'; // Light Grey for text
@@ -36,28 +39,20 @@ const Navbar = () => {
             <Image
               src={`${process.env.PUBLIC_URL}/img/logo-updated.png`}
               alt="Logo"
-              boxSize="60px" // Increased size slightly
-              maxH="100%" // Ensure the logo fits within the navbar height
+              boxSize={{ base: "40px", md: "50px" }} // Smaller logo for mobile
+              maxH="100%"
               mr={3}
               cursor="pointer"
             />
           </ChakraLink>
           <ChakraLink as={Link} to="header" smooth duration={500} offset={-50}>
-            <Text fontSize="2xl" fontWeight="bold" color={primaryColor} cursor="pointer">
+            <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight="bold" color={primaryColor} cursor="pointer">
               Arish's Portfolio
             </Text>
           </ChakraLink>
         </Flex>
-        <IconButton
-          size="md"
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-          aria-label="Toggle Navigation"
-          display={{ md: 'none' }}
-          onClick={isOpen ? onClose : onOpen}
-          bg="transparent"
-          color={textColor}
-        />
-        <HStack as="nav" spacing={8} display={{ base: 'none', md: 'flex' }}>
+
+        <HStack as="nav" spacing={{ base: 4, md: 8 }} display={{ base: 'none', md: 'flex' }} mx="auto">
           {sections.map((section) => (
             <ChakraLink
               as={Link}
@@ -67,7 +62,7 @@ const Navbar = () => {
               spy
               offset={-50}
               key={section.id}
-              fontSize="lg"
+              fontSize={{ base: "md", md: "lg" }} // Smaller font for mobile
               px={3}
               py={1}
               _hover={{ textDecoration: 'none', color: primaryColor }}
@@ -77,6 +72,30 @@ const Navbar = () => {
               {section.name}
             </ChakraLink>
           ))}
+        </HStack>
+
+        <HStack spacing={3} alignItems="center">
+          <Tooltip label="Toggle Theme" fontSize="md" bg={primaryColor} color={bgColor} placement="bottom" hasArrow>
+            <IconButton
+              icon={colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
+              aria-label="Toggle Color Mode"
+              onClick={toggleColorMode}
+              size="md"
+              bg="transparent"
+              color={primaryColor}
+              _hover={{ color: colorMode === 'light' ? 'yellow.500' : 'blue.300' }}
+              mx="2"
+            />
+          </Tooltip>
+          <IconButton
+            size="md"
+            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+            aria-label="Toggle Navigation"
+            display={{ md: 'none' }}
+            onClick={isOpen ? onClose : onOpen}
+            bg="transparent"
+            color={textColor}
+          />
         </HStack>
       </Flex>
 

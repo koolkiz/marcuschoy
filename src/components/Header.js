@@ -1,17 +1,15 @@
 import React from 'react';
-import { Box, Heading, Button, Image, Link as ChakraLink, Text, HStack, Switch, useColorMode, useColorModeValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion'; // Importing motion from framer-motion
+import { Box, Heading, Button, Image, Link as ChakraLink, Text, useColorModeValue } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import useTypewriter from './hooks/useTypewriter';
 
 const Header = () => {
   const { text } = useTypewriter(['Data Analytics', 'Research', 'Cloud Services'], 70, 50, 800);
-  const { colorMode, toggleColorMode } = useColorMode();
 
   const bgImage = useColorModeValue(`${process.env.PUBLIC_URL}/img/vector5.jpg`, `${process.env.PUBLIC_URL}/img/vector4.jpg`);
   const headingColor = useColorModeValue('#19181A', '#FFD700'); // Dark color for light mode, bright yellow for dark mode
   const subheadingColor = useColorModeValue('#333', '#CEBC81'); // Dark color for light mode, lighter color for dark mode
   const textColor = useColorModeValue('#333', '#E0E0E0'); // Dark color for light mode, light gray for dark mode
-  const switchTextColor = useColorModeValue('#1E2022', '#E0E0E0'); // Ensure the text is visible in both modes
 
   return (
     <Box
@@ -106,18 +104,6 @@ const Header = () => {
             <Image src={`${process.env.PUBLIC_URL}/img/github-icon.png`} alt="GitHub Icon" boxSize="20px" mr={2} />
             View GitHub
           </Button>
-          <HStack spacing={3} ml={4} alignItems="center">
-            <Text fontSize="lg" color={switchTextColor} fontWeight="bold">
-              {colorMode === 'light' ? 'Light Mode' : 'Dark Mode'}
-            </Text>
-            <Switch
-              size="lg"
-              isChecked={colorMode === 'dark'}
-              onChange={toggleColorMode}
-              colorScheme="purple"
-              aria-label="Toggle Color Mode"
-            />
-          </HStack>
         </Box>
       </Box>
       <ChakraLink

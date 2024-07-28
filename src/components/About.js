@@ -4,8 +4,6 @@ import {
   Container,
   Heading,
   Text,
-  Image,
-  SimpleGrid,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
@@ -16,7 +14,6 @@ const About = () => {
   const textColor = useColorModeValue('#19181A', '#E2E8F0');
   const headingColor = useColorModeValue('#E7717D', '#CEBC81');
   const subHeadingColor = useColorModeValue('#CEBC81', '#FFD700');
-  const descriptionColor = useColorModeValue('#333', '#ddd');
   const highlightColor = useColorModeValue('#A16E83', '#FFD700');
 
   // Animation variants for the container transitions
@@ -30,7 +27,7 @@ const About = () => {
       id="about"
       bg={bg}
       color={textColor}
-      py={16} // Increased padding at the top and bottom
+      py={16}
       as={motion.div}
       initial="hidden"
       animate="visible"
@@ -55,53 +52,9 @@ const About = () => {
         <Text fontSize="xl" mb={4} color={subHeadingColor} fontWeight="semibold">
           Data Science Enthusiast <span role="img" aria-label="computer">💻</span>
         </Text>
-        <Text fontSize="lg" mb={10} color={descriptionColor} maxW="container.md" mx="auto">
-          I'm Arish, a data science student passionate about transforming data into actionable insights. I specialize in <Text as="span" fontWeight="bold" color={highlightColor}>Data Analytics, Research, and Cloud Services</Text>. My goal is to use data to drive strategic decisions and create impactful solutions.
+        <Text fontSize="lg" mb={10} color={textColor} maxW="container.md" mx="auto">
+          Hi! I'm Arish. I love making things simple and using technology to improve lives. Whether it's through data analytics, research, or cloud services, I'm passionate about creating practical solutions.
         </Text>
-        <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10} mb={6}>
-          <Box display="flex" flexDirection="column" alignItems="center">
-            <Image
-              as={motion.img}
-              src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
-              alt="Cat Typing"
-              borderRadius="lg"
-              boxSize="150px"
-              objectFit="cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-            />
-            <Text mt={2} color={descriptionColor}>Hard at work!</Text>
-          </Box>
-          <Box display="flex" flexDirection="column" alignItems="center">
-            <Image
-              as={motion.img}
-              src="https://media.giphy.com/media/26tPplGWjN0xLybiU/giphy.gif"
-              alt="Data Analysis"
-              borderRadius="lg"
-              boxSize="150px"
-              objectFit="cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-            />
-            <Text mt={2} color={descriptionColor}>Data crunching time!</Text>
-          </Box>
-          <Box display="flex" flexDirection="column" alignItems="center">
-            <Image
-              as={motion.img}
-              src="https://media.giphy.com/media/3o6Zt8MgUuvSbkZYWc/giphy.gif"
-              alt="Enjoying Data"
-              borderRadius="lg"
-              boxSize="150px"
-              objectFit="cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.9 }}
-            />
-            <Text mt={2} color={descriptionColor}>Having fun with data!</Text>
-          </Box>
-        </SimpleGrid>
         <Text
           as={motion.p}
           fontSize="lg"
@@ -110,7 +63,7 @@ const About = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.9 }}
         >
-          "To analyze or not to analyze, that is the question!" <span role="img" aria-label="thinking">🤔</span>
+          "Let's make life simpler with tech!" <span role="img" aria-label="lightbulb">💡</span>
         </Text>
       </Container>
     </Box>
