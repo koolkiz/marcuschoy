@@ -34,7 +34,7 @@ const Experience = () => {
       date: 'March 2024 – July 2024',
       company: 'AusTriathlon',
       location: 'Canberra, Australia',
-      title: 'Data Analyst Intern',
+      title: 'Data Analyst',
       description: [
         'Worked under the guidance of a coach involved with the Australian Olympic team, gaining valuable insights into high-level athletic performance analysis.',
         'Generated detailed visual reports on race laps and athlete performance metrics, aiding coaches in strategic planning and performance enhancement.',
@@ -46,11 +46,10 @@ const Experience = () => {
       date: 'July 2022 – May 2024',
       company: 'Shoes and Sox',
       location: 'Canberra, Australia',
-      title: 'Sales',
+      title: 'Sales Analyst',
       description: [
-        'Sharpened communication, interpersonal, and negotiating skills, leading to improved customer interactions and satisfaction.',
-        'Utilized data science techniques to analyze customer behavior and preferences, which informed the creation of a successful customer loyalty program, boosting repeat business.',
-        'Optimized store hours and implemented cost-cutting measures, enhancing overall business efficiency.',
+        'Partnered with the regional manager to scrutinize sales and traffic data, successfully reducing store hours by 10% and cutting operational costs by 15% without impacting customer satisfaction.',
+        'Designed and implemented a data-driven customer loyalty program that increased repeat business by 10% and improved overall customer engagement.',
       ],
     },
     {
