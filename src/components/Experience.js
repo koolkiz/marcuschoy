@@ -57,7 +57,7 @@ const Experience = () => {
       date: 'November 2020 – November 2021',
       company: 'Nepal Oil Corporation',
       location: 'Kathmandu, Nepal',
-      title: 'IT Support',
+      title: 'IT Operations Specialist',
       description: [
         'Key contributor to Nepal\'s first ERP implementation project.',
         'Provided SAP Business One support and training for non-technical staff.',
