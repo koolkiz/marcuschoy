@@ -80,7 +80,7 @@ const Header = () => {
         <Box display="flex" justifyContent="center" alignItems="center" mt={4} flexWrap="wrap">
           <Button
             as="a"
-            href={`${process.env.PUBLIC_URL}/img/Arish_Resume.pdf`}
+            href={`${process.env.PUBLIC_URL}/img/arish_resume.pdf`}
             bgColor="#1e90ff"
             color="white"
             size="lg"
