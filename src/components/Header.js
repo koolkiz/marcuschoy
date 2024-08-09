@@ -80,7 +80,9 @@ const Header = () => {
         <Box display="flex" justifyContent="center" alignItems="center" mt={4} flexWrap="wrap">
           <Button
             as="a"
-            href={`${process.env.PUBLIC_URL}/img/arish_resume.pdf`}
+            href={`${process.env.PUBLIC_URL}/img/Arish_Acharya_Resume.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
             bgColor="#1e90ff"
             color="white"
             size="lg"
@@ -94,6 +96,8 @@ const Header = () => {
           <Button
             as="a"
             href="https://github.com/acharyaarish"
+            target="_blank"
+            rel="noopener noreferrer"
             bgColor="#F96167"
             color="white"
             size="lg"
@@ -108,6 +112,8 @@ const Header = () => {
       </Box>
       <ChakraLink
         href="https://www.vecteezy.com/free-vector/sky"
+        target="_blank"
+        rel="noopener noreferrer"
         position="absolute"
         bottom={4}
         right={4}
