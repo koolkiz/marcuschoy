@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-// Animation variants for the education cards
 const cardVariant = {
   hidden: { opacity: 0, y: 50 },
   visible: { opacity: 1, y: 0 },
@@ -19,13 +18,12 @@ const cardVariant = {
 };
 
 const Education = () => {
-  // Define color scheme based on the provided palettes
-  const sectionBg = useColorModeValue('#F7F9FB', '#19181A'); // Background color
-  const sectionColor = useColorModeValue('#19181A', '#E2E8F0');
-  const cardBg = useColorModeValue('#ffffff', '#2D3748');
-  const cardHoverBg = useColorModeValue('#EDF2F7', '#3B3F44');
-  const headingColor = useColorModeValue('#E7717D', '#CEBC81');
-  const textColor = useColorModeValue('#333', '#ddd');
+  const sectionBg = useColorModeValue('#F7F9FB', '#19181A');
+  const sectionColor = useColorModeValue('#19181A', '#555657');
+  const cardBg = useColorModeValue('#FDFDFD', '#C6C6C6');
+  const cardHoverBg = useColorModeValue('#FFFFFF', '#D7D7D7');
+  const headingColor = useColorModeValue('#E7717D', '#4b72a6'); // More visible color for dark mode
+  const textColor = useColorModeValue('#19181A', '#555657'); // Darker text for light mode, lighter for dark mode
 
   const education = [
     {
@@ -38,7 +36,7 @@ const Education = () => {
     {
       logo: `${process.env.PUBLIC_URL}/img/another-university-logo.png`,
       degree: 'Bachelor of Computer Networking and IT Security',
-      institution: 'Islington College (London Metropolitan University)',
+      institution: 'London Metropolitan University',
       location: 'Kathmandu, Nepal',
       date: 'July 2017 – March 2020',
     },
@@ -79,7 +77,7 @@ const Education = () => {
                     src={edu.logo}
                     alt={edu.institution}
                     borderRadius="full"
-                    boxSize="100px"
+                    boxSize="100px" // Uniform size for both logos
                     objectFit="contain"
                   />
                 </Flex>
