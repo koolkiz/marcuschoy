@@ -49,6 +49,8 @@ const Header = () => {
           zIndex: '-1',
           opacity: useColorModeValue(0.8, 1), // Slight transparency for light mode
         }}
+        preload="auto" // Preload the video to improve loading time
+        poster={`${process.env.PUBLIC_URL}/img/poster.jpg`} // Fallback image while video loads
         playbackRate={0.5}
       >
         <source src={videoSrc} type="video/mp4" />
