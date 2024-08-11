@@ -38,7 +38,6 @@ const Header = () => {
       <video
         ref={videoRef}
         autoPlay
-        loop
         muted
         playsInline
         style={{
@@ -47,11 +46,11 @@ const Header = () => {
           height: '100%',
           objectFit: 'cover',
           zIndex: '-1',
-          opacity: useColorModeValue(0.8, 1), // Slight transparency for light mode
+          transition: 'opacity 1s ease-in-out',
         }}
-        preload="auto" // Preload the video to improve loading time
-        poster={`${process.env.PUBLIC_URL}/img/poster.jpg`} // Fallback image while video loads
-        playbackRate={0.5}
+        loop
+        poster={`${process.env.PUBLIC_URL}/img/poster.jpg`}
+        preload="auto"
       >
         <source src={videoSrc} type="video/mp4" />
       </video>

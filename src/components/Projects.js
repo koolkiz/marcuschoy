@@ -22,7 +22,7 @@ const projects = [
   {
     name: 'Dog Breed Detector',
     link: 'https://github.com/acharyaarish/dog_breed_detector',
-    description: 'The Dog Breed Detector is a web application that challenges users to identify dog breeds from images provided by the Dog CEO API. Built with a React frontend, Node.js backend and SQLite for database.',
+    description: 'The Dog Breed Detector is a web application that challenges users to identify dog breeds from images provided by the Dog CEO API. Built with a React frontend, Node.js backend, and SQLite for the database.',
     tags: ['Node.js', 'React', 'API'],
   },
   {
@@ -46,22 +46,22 @@ const projects = [
   {
     name: 'Professor',
     link: 'https://paldip.com/',
-    description: 'Assisted my University Professor with testing, debugging and adding new features for his Edtech Platform. We implemented QR system for attendance, PostHog for Analytics and fixed minor bugs.',
+    description: 'Assisted my University Professor with testing, debugging, and adding new features for his Edtech Platform. We implemented a QR system for attendance, PostHog for Analytics, and fixed minor bugs.',
     tags: ['Edtech', 'Testing', 'Debugging'],
   },
 ];
 
 const Projects = () => {
-  const bgColor = useColorModeValue('#B4D8E7', '#1A202C'); // Lighter container background color
+  const bgColor = useColorModeValue('#EDF2F7', '#1A202C');
   const textColor = useColorModeValue('#2D3748', '#E2E8F0');
-  const linkColor = useColorModeValue('#00796B', '#90CDF4');
-  const cardBgColor = useColorModeValue('#FFFFFF', '#334552'); // Light card background color
-  const cardHoverBgColor = useColorModeValue('#e8f0f8', '#3B3F44'); // Slightly lighter hover background color
-  const tagBgColor = useColorModeValue('#00796B', '#577b91');
+  const linkColor = useColorModeValue('#2B6CB0', '#90CDF4');
+  const cardBgColor = useColorModeValue('#FFFFFF', '#2D3748');
+  const cardHoverBgColor = useColorModeValue('#E2E8F0', '#3B3F44');
+  const tagBgColor = useColorModeValue('#3182CE', '#577B91');
 
   return (
-    <Box as="section" bg={bgColor} color={textColor} id="projects">
-      <Container maxW="container.xl" textAlign="center" py={20}>
+    <Box as="section" bg={bgColor} color={textColor} id="projects" py={20} px={4}>
+      <Container maxW="container.xl" textAlign="center">
         <Heading as="h2" size="xl" mb={8} color={linkColor}>
           Projects 🚀
         </Heading>
@@ -69,28 +69,28 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
             >
               <Box
                 bg={cardBgColor}
-                borderRadius="md"
-                boxShadow="md"
-                p={5}
+                borderRadius="lg"
+                boxShadow="xl"
+                p={6}
                 height="100%"
                 display="flex"
                 flexDirection="column"
                 justifyContent="space-between"
                 _hover={{ bg: cardHoverBgColor }}
-                transition="0.3s"
+                transition="background-color 0.3s ease"
               >
                 <VStack spacing={4} align="start">
                   <Image
                     src={`${process.env.PUBLIC_URL}/img/${project.name.toLowerCase().replace(/\s+/g, '-')}.png`}
                     alt={project.name}
-                    borderRadius="md"
+                    borderRadius="lg"
                     objectFit="cover"
-                    height="200px" // Increased image height for better visibility
+                    height="200px"
                     width="100%"
                   />
                   <Box>

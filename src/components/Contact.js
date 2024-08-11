@@ -13,6 +13,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -63,25 +64,35 @@ const Contact = () => {
       });
   };
 
-  // Define color scheme based on the provided palettes
-  const bgColor = useColorModeValue('#D1D5DB', '#2A2A2A'); // Slightly darker background
   const textColor = useColorModeValue('#333', '#E2E8F0');
-  const borderColor = useColorModeValue('#cccccc', '#555555');
-  const inputBg = useColorModeValue('#fff', '#2D3748');
+  const borderColor = useColorModeValue('#CCCCCC', '#555555');
+  const inputBg = useColorModeValue('#FFFFFF', '#3D3D3D');
   const inputFocusBorder = useColorModeValue('#3182ce', '#90CDF4');
+  const sectionBg = useColorModeValue('#ebebe7', '#263238');
 
   return (
     <Box
       as="section"
-      bg={bgColor}
+      bg={sectionBg}
       color={textColor}
-      py={20}
+      py={16}
       id="contact"
       borderRadius="lg"
       boxShadow="lg"
+      position="relative"
+      overflow="hidden"
     >
       <Container maxW="container.md" textAlign="center">
-        <Heading as="h2" size="xl" mb={10} color={textColor} fontWeight="bold">
+        <Heading
+          as={motion.h2}
+          size="xl"
+          mb={10}
+          color={textColor}
+          fontWeight="bold"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           Get in Touch 📬
         </Heading>
         <form onSubmit={handleSubmit}>
@@ -96,6 +107,10 @@ const Contact = () => {
               _hover={{ borderColor: inputFocusBorder }}
               _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
               isRequired
+              as={motion.input}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
             />
             <Input
               placeholder="Your Email"
@@ -108,6 +123,10 @@ const Contact = () => {
               _hover={{ borderColor: inputFocusBorder }}
               _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
               isRequired
+              as={motion.input}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
             />
             <Textarea
               placeholder="Your Message"
@@ -119,6 +138,10 @@ const Contact = () => {
               _hover={{ borderColor: inputFocusBorder }}
               _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
               isRequired
+              as={motion.textarea}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7 }}
             />
           </VStack>
           <Button
@@ -130,6 +153,9 @@ const Contact = () => {
             mt={8}
             isFullWidth
             transition="all 0.3s"
+            as={motion.button}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
           >
             Send Message 💬
           </Button>
@@ -142,6 +168,10 @@ const Contact = () => {
               variant="ghost"
               fontSize="2xl"
               _hover={{ color: 'teal.500' }}
+              as={motion.button}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
             >
               GitHub
             </Button>

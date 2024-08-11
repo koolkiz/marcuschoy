@@ -8,7 +8,6 @@ import {
   Heading,
   useColorModeValue,
   Container,
-  chakra,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import {
@@ -36,60 +35,51 @@ const skills = [
 ];
 
 const Skills = () => {
-  const bg = useColorModeValue('#e0e5ec', '#2a2e35'); // Slightly darker background
-  const cardBg = useColorModeValue('#ffffff', '#2D3748');
-  const textColor = useColorModeValue('#333', '#E2E8F0');
-  const iconColor = useColorModeValue('#3182ce', '#63b3ed');
-  const descriptionColor = useColorModeValue('#718096', '#a0aec0');
-  const headingColor = useColorModeValue('#333333', '#e2e8f0');
+  const bg = useColorModeValue('#e0f7fa', '#263238'); 
+  const cardBg = useColorModeValue('#ffffff', '#37474f'); 
+  const textColor = useColorModeValue('#212121', '#e0e0e0');
+  const iconColor = useColorModeValue('#00796b', '#4caf50');
+  const descriptionColor = useColorModeValue('#546e7a', '#b0bec5');
+  const headingColor = useColorModeValue('#00796b', '#80deea');
 
   return (
-    <Box id="skills" bg={bg} py={16}>
-      <chakra.style>
-        {`
-          .skill-card {
-            position: relative;
-            overflow: hidden;
-            border-width: 3px;
-            border-style: solid;
-            border-radius: 12px;
-            border-color: transparent;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-          }
-          .skill-card:hover {
-            transform: translateY(-8px);
-            border-image: linear-gradient(45deg, #3182ce, #63b3ed, #4eea0a, #3182ce);
-            border-image-slice: 1;
-          }
-        `}
-      </chakra.style>
+    <Box id="skills" bg={bg} py={16} px={6}>
       <Container maxW="container.xl">
         <VStack spacing={8} mb={8} textAlign="center">
-          <Heading fontSize="3xl" fontWeight="bold" color={headingColor}>Skills</Heading>
+          <Heading fontSize="3xl" fontWeight="bold" color={headingColor}>
+            Skills
+          </Heading>
           <Text fontSize="lg" color={textColor} fontFamily="Poppins, sans-serif">
-            Technologies and tools I'm proficient in:
+            Basic understanding, constantly improving:
           </Text>
         </VStack>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8}>
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.1, rotate: 2 }}
+              transition={{ duration: 0.2 }}
             >
               <Box
                 bg={cardBg}
                 p={6}
-                className="skill-card"
+                borderRadius="lg"
+                boxShadow="lg"
                 textAlign="center"
                 display="flex"
                 flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
+                transition="transform 0.2s ease"
+                _hover={{ transform: 'scale(1.08)' }}
               >
-                <Icon as={skill.icon} boxSize="40px" color={iconColor} mb={4} />
-                <Text fontWeight="bold" fontSize="lg" color={textColor}>{skill.name}</Text>
-                <Text fontSize="sm" color={descriptionColor} mt={2}>{skill.description}</Text>
+                <Icon as={skill.icon} boxSize="50px" color={iconColor} mb={4} />
+                <Text fontWeight="bold" fontSize="lg" color={textColor}>
+                  {skill.name}
+                </Text>
+                <Text fontSize="sm" color={descriptionColor} mt={2}>
+                  {skill.description}
+                </Text>
               </Box>
             </motion.div>
           ))}

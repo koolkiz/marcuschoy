@@ -12,18 +12,18 @@ import {
 import { motion } from 'framer-motion';
 
 const cardVariant = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0 },
-  hover: { scale: 1.05, transition: { duration: 0.3 } },
+  hover: { scale: 1.08, transition: { duration: 0.2 } },
 };
 
 const Education = () => {
-  const sectionBg = useColorModeValue('#F7F9FB', '#19181A');
-  const sectionColor = useColorModeValue('#19181A', '#555657');
-  const cardBg = useColorModeValue('#FDFDFD', '#C6C6C6');
-  const cardHoverBg = useColorModeValue('#FFFFFF', '#D7D7D7');
-  const headingColor = useColorModeValue('#E7717D', '#4b72a6'); // More visible color for dark mode
-  const textColor = useColorModeValue('#19181A', '#555657'); // Darker text for light mode, lighter for dark mode
+  const sectionBg = useColorModeValue('#F0F8FF', '#222831'); 
+  const sectionColor = useColorModeValue('#1A202C', '#E2E8F0');
+  const cardBg = useColorModeValue('#FFFFFF', '#E2E8F0');
+  const cardHoverBg = useColorModeValue('#EDF2F7', '#EDF2F7'); 
+  const headingColor = useColorModeValue('#2C5282', '#F6AD55');
+  const textColor = useColorModeValue('#1A202C', '#1A202C');
 
   const education = [
     {
@@ -43,10 +43,10 @@ const Education = () => {
   ];
 
   return (
-    <Box as="section" bg={sectionBg} color={sectionColor} py={20} id="education">
+    <Box as="section" bg={sectionBg} color={sectionColor} py={24} id="education">
       <Container maxW="container.xl" textAlign="center">
-        <Heading as="h2" size="xl" mb={14} color={headingColor}>
-          Education 🎒🏫
+        <Heading as="h2" size="lg" mb={10} color={headingColor}>
+          Education 🎓
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} justifyContent="center">
           {education.map((edu, index) => (
@@ -56,42 +56,42 @@ const Education = () => {
               initial="hidden"
               animate="visible"
               whileHover="hover"
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.1 }}
             >
               <Box
                 bg={cardBg}
                 color={textColor}
-                p={8}
-                borderRadius="lg"
+                p={6}
+                borderRadius="md"
                 boxShadow="lg"
                 _hover={{ bg: cardHoverBg }}
-                transition="background-color 0.3s, transform 0.3s"
+                transition="background-color 0.2s ease, transform 0.2s ease"
                 h="100%"
                 display="flex"
                 flexDirection="column"
                 justifyContent="center"
                 alignItems="center"
               >
-                <Flex align="center" mb={6} justifyContent="center">
+                <Flex align="center" mb={4} justifyContent="center">
                   <Image
                     src={edu.logo}
                     alt={edu.institution}
                     borderRadius="full"
-                    boxSize="100px" // Uniform size for both logos
+                    boxSize="80px"
                     objectFit="contain"
                   />
                 </Flex>
                 <Box textAlign="center">
-                  <Text fontWeight="bold" fontSize="lg" color={textColor}>
+                  <Text fontWeight="bold" fontSize="md">
                     {edu.institution}
                   </Text>
-                  <Text fontSize="sm" color="gray.500" mb={2}>
+                  <Text fontSize="xs" color="gray.500" mb={1}>
                     {edu.location}
                   </Text>
-                  <Text fontWeight="bold" fontSize="md" color={headingColor} mb={1} mt={3}>
+                  <Text fontWeight="bold" fontSize="sm" mb={1} mt={1}>
                     {edu.degree}
                   </Text>
-                  <Text fontSize="sm" color="gray.500">
+                  <Text fontSize="xs" color="gray.500">
                     {edu.date}
                   </Text>
                 </Box>

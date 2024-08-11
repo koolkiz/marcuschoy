@@ -21,6 +21,7 @@ const Navbar = () => {
   const bgColor = '#19181A'; // Dark background
   const primaryColor = '#CEBC81'; // Light Yellow for active and hover states
   const textColor = '#ECF0F1'; // Light Grey for text
+  const closeIconHoverColor = colorMode === 'light' ? '#6B46C1' : '#D69E2E'; // Muted accent color for close button
 
   const sections = [
     { name: 'About', id: 'about' },
@@ -95,6 +96,7 @@ const Navbar = () => {
             onClick={isOpen ? onClose : onOpen}
             bg="transparent"
             color={textColor}
+            _hover={{ color: isOpen ? closeIconHoverColor : primaryColor }} // Professional hover color for the close icon
           />
         </HStack>
       </Flex>

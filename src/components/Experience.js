@@ -11,22 +11,20 @@ import {
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-// Animation variants for the experience cards
 const cardVariant = {
-  hidden: { opacity: 0, y: 50 },
-  visible: { opacity: 1, y: 0 },
-  hover: { scale: 1.05, transition: { duration: 0.3 } },
+  hidden: { opacity: 0, y: 50, scale: 0.9 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 15 } },
+  hover: { scale: 1.08, transition: { duration: 0.2, type: 'spring', stiffness: 250, damping: 15 } },
 };
 
 const Experience = () => {
-  // Define color scheme based on the provided palettes
-  const sectionBg = useColorModeValue('#F0F4F8', '#121212'); // Light background for light mode, darker for dark mode
+  const sectionBg = useColorModeValue('#E0E5EC', '#2A2E35');
   const sectionColor = useColorModeValue('#19181A', '#E2E8F0');
-  const cardBg = useColorModeValue('#D8EBFB', '#2D3748'); // Light blue for light mode, dark for dark mode
-  const cardHoverBg = useColorModeValue('#BFDFFB', '#3B3F44'); // Slightly darker blue for hover in light mode
-  const headingColor = useColorModeValue('#206a5d', '#90EE90'); // Darker green for headings
-  const textColor = useColorModeValue('#333333', '#E2E8F0');
-  const secondaryTextColor = useColorModeValue('#555555', '#A0AEC0'); // Lighter gray for secondary text
+  const cardBg = useColorModeValue('#ffffff', '#333842');
+  const cardHoverBg = useColorModeValue('#F0F4F8', '#3B3F44');
+  const headingColor = useColorModeValue('#3182ce', '#FFD700');
+  const textColor = useColorModeValue('#333', '#E2E8F0');
+  const secondaryTextColor = useColorModeValue('#718096', '#A0AEC0');
 
   const experiences = [
     {
@@ -36,9 +34,8 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Data Analyst',
       description: [
-        'Worked under the guidance of a coach involved with the Australian Olympic team, gaining valuable insights into high-level athletic performance analysis.',
-        'Generated detailed visual reports on race laps and athlete performance metrics, aiding coaches in strategic planning and performance enhancement.',
-        'Utilized R and Power BI to automate the processing of cycling race data generated from power meter',
+        'Collaborated with an Olympic team analyst to develop an automated system for processing cycling race data, providing real-time visualizations and insights to enhance athlete performance.',
+        'Analyzed race metrics such as laps, patterns, and trends using R, and created detailed visual reports that supported strategic decisions.',
       ],
     },
     {
@@ -48,8 +45,9 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Sales Analyst',
       description: [
-        'Partnered with the regional manager to scrutinize sales and traffic data, successfully reducing store hours by 10% and cutting operational costs by 15% without impacting customer satisfaction.',
-        'Designed and implemented a data-driven customer loyalty program that increased repeat business by 10% and improved overall customer engagement.',
+        'Led analysis to reduce store hours by 10%, cutting operational costs by 15% without affecting customer satisfaction.',
+        'Designed and implemented a customer loyalty program that increased repeat business by 10%, significantly improving customer engagement.',
+        'Created guided technical documentation for the new loyalty program, ensuring smooth implementation across all stores in Australia.',
       ],
     },
     {
@@ -59,10 +57,9 @@ const Experience = () => {
       location: 'Kathmandu, Nepal',
       title: 'IT Operations Specialist',
       description: [
-        'Key contributor to Nepal\'s first ERP implementation project.',
-        'Provided SAP Business One support and training for non-technical staff.',
-        'Implemented ERP systems and managed ITIL practices, streamlining operations.',
-        'I led a team to manage IT systems and oversee networking across multiple branches, ensuring seamless business operations.',
+        'Successfully implemented Nepal’s first government ERP project, ensuring seamless operations with zero downtime.',
+        'Managed IT systems across multiple branches, ensuring all hardware, software, and networking were optimized and operational.',
+        'Trained government employees on SAP Business One, enhancing their ability to use the system effectively.',
       ],
     },
     {
@@ -72,18 +69,17 @@ const Experience = () => {
       location: 'Kathmandu, Nepal',
       title: 'Network Engineer Intern',
       description: [
-        'Gained hands-on experience in implementing LAN/WAN, configuring networking devices, and modernizing office systems to meet current technological standards.',
-        'Provided tailored access control based on user roles to enhance security and operational efficiency',
-        'Created VLANs to segment network traffic and improve overall infrastructure reliability.',
-        'Ensured optimal performance by regularly analyzing routers and switches.',
+        'Implemented LAN/WAN networks, modernizing office systems and enhancing overall infrastructure reliability.',
+        'Configured networking devices and created VLANs to segment traffic, improving network security and performance.',
+        'Provided tailored access control based on user roles, enhancing security and operational efficiency.',
       ],
     },
   ];
 
   return (
-    <Box as="section" bg={sectionBg} color={sectionColor} py={12} id="experience">
-      <Container maxW="container.xl" textAlign="center" pt={4} pb={16}>
-        <Heading as="h2" size="xl" mb={8} color={headingColor}>
+    <Box as="section" bg={sectionBg} color={sectionColor} py={20} px={4} id="experience">
+      <Container maxW="container.xl" textAlign="center">
+        <Heading as="h2" size="xl" mb={12} color={headingColor}>
           Experience 👨‍💻
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
@@ -94,16 +90,16 @@ const Experience = () => {
               initial="hidden"
               animate="visible"
               whileHover="hover"
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.1 }}
             >
               <Box
                 bg={cardBg}
                 color={textColor}
-                p={8} // Increased padding inside the container
+                p={6}
                 borderRadius="lg"
                 boxShadow="lg"
                 _hover={{ bg: cardHoverBg }}
-                transition="background-color 0.3s, transform 0.3s"
+                transition="background-color 0.2s, transform 0.2s"
                 h="100%"
                 display="flex"
                 flexDirection="column"
@@ -114,12 +110,12 @@ const Experience = () => {
                     src={experience.logo}
                     alt={experience.company}
                     borderRadius="full"
-                    boxSize="80px"
+                    boxSize="60px"
                     mr={4}
                     objectFit="contain"
                   />
                   <Box textAlign="left">
-                    <Text fontWeight="bold" fontSize="lg" color={textColor}>
+                    <Text fontWeight="bold" fontSize="md" color={textColor}>
                       {experience.company}
                     </Text>
                     <Text fontSize="sm" color={secondaryTextColor}>
