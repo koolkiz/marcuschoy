@@ -8,17 +8,19 @@ const Header = () => {
 
   const headingColor = useColorModeValue('#0C0C0C', '#FBEAEB');
   const subheadingColor = useColorModeValue('#333333', '#FBEAEB');
+  const videoRef = useRef(null);
 
   const videoSrc = useColorModeValue(
     `${process.env.PUBLIC_URL}/img/light-mode.mp4`,
     `${process.env.PUBLIC_URL}/img/dark-mode.mp4`
   );
 
-  const videoRef = useRef(null);
-
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.load();
+      videoRef.current.oncanplaythrough = () => {
+        videoRef.current.play();
+      };
     }
   }, [videoSrc]);
 
@@ -49,8 +51,8 @@ const Header = () => {
           transition: 'opacity 1s ease-in-out',
         }}
         loop
-        poster={`${process.env.PUBLIC_URL}/img/poster.jpg`}
         preload="auto"
+        poster={`${process.env.PUBLIC_URL}/img/poster.jpg`}
       >
         <source src={videoSrc} type="video/mp4" />
       </video>

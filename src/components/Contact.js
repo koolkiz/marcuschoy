@@ -178,7 +178,7 @@ const Contact = () => {
           </Link>
         </Flex>
         <Box mt={8} fontSize="sm" color={textColor}>
-          &copy; 2023 Arish Acharya - All rights reserved.
+          &copy; 2024 Arish Acharya - All rights reserved.
         </Box>
       </Container>
     </Box>
