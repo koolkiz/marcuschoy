@@ -40,13 +40,12 @@ const Skills = () => {
   const textColor = useColorModeValue('#212121', '#e0e0e0');
   const iconColor = useColorModeValue('#00796b', '#4caf50');
   const descriptionColor = useColorModeValue('#546e7a', '#b0bec5');
-  const headingColor = useColorModeValue('#00796b', '#80deea');
 
   return (
     <Box id="skills" bg={bg} py={16} px={6}>
       <Container maxW="container.xl">
         <VStack spacing={8} mb={8} textAlign="center">
-          <Heading fontSize="3xl" fontWeight="bold" color={headingColor}>
+          <Heading fontSize="3xl" fontWeight="bold" color={iconColor}>
             Skills
           </Heading>
           <Text fontSize="lg" color={textColor} fontFamily="Poppins, sans-serif">
