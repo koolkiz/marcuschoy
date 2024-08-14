@@ -21,7 +21,7 @@ const Education = () => {
   const sectionBg = useColorModeValue('#F0F8FF', '#222831'); 
   const sectionColor = useColorModeValue('#1A202C', '#E2E8F0');
   const cardBg = useColorModeValue('#FFFFFF', '#E2E8F0');
-  const cardHoverBg = useColorModeValue('#EDF2F7', '#EDF2F7'); 
+  const cardHoverBg = useColorModeValue('#ADD8E6', '#ADD8E6'); 
   const headingColor = useColorModeValue('#2C5282', '#F6AD55');
   const textColor = useColorModeValue('#1A202C', '#1A202C');
 

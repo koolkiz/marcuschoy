@@ -21,7 +21,7 @@ const Experience = () => {
   const sectionBg = useColorModeValue('#E0E5EC', '#2A2E35');
   const sectionColor = useColorModeValue('#19181A', '#E2E8F0');
   const cardBg = useColorModeValue('#ffffff', '#333842');
-  const cardHoverBg = useColorModeValue('#F0F4F8', '#3B3F44');
+  const cardHoverBg = useColorModeValue('#ADD8E6', '#3B3F44');
   const headingColor = useColorModeValue('#3182ce', '#FFD700');
   const textColor = useColorModeValue('#333', '#E2E8F0');
   const secondaryTextColor = useColorModeValue('#718096', '#A0AEC0');
