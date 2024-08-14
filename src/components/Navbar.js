@@ -35,14 +35,18 @@ const Navbar = () => {
   ];
 
   return (
-    <Box as="nav" bg={bgColor} px={4} py={0} position="fixed" w="100%" zIndex="10" boxShadow="sm">
-      <Flex h={12} alignItems="center" justifyContent="space-between"> {/* Slightly larger height */}
+    <Box as="nav" bg={bgColor} px={3} py={0} position="fixed" w="100%" zIndex="10" boxShadow="sm">
+      <Flex
+        h={{ base: '45px', md: '50px', lg: '55px' }} // More compact height for a sleek design
+        alignItems="center"
+        justifyContent="space-between"
+      >
         <Flex alignItems="center">
           <ChakraLink as={Link} to="header" smooth duration={500} offset={-50}>
             <Image
               src={`${process.env.PUBLIC_URL}/img/logo-updated.png`} // Update the logo path if necessary
               alt="Logo"
-              boxSize={{ base: '30px', md: '35px' }} // Slightly larger logo size for better visibility
+              boxSize={{ base: '25px', md: '30px', lg: '35px' }} // Smaller logo size for a more minimalistic look
               maxH="100%"
               mr={2} // Adjust margin for better alignment
               objectFit="contain" // Ensure the logo maintains its aspect ratio
@@ -58,7 +62,7 @@ const Navbar = () => {
             _hover={{ textDecoration: 'none' }} // Remove underline on hover
           >
             <Text
-              fontSize={{ base: 'md', md: 'lg' }} // Slightly larger font for the title
+              fontSize={{ base: 'sm', md: 'md' }} // Smaller font size for the title
               fontWeight="bold"
               color={primaryColor}
               cursor="pointer"
@@ -70,7 +74,7 @@ const Navbar = () => {
 
         <HStack
           as="nav"
-          spacing={{ base: 2, md: 6 }}
+          spacing={{ base: 2, md: 4 }}
           display={{ base: 'none', md: 'flex' }}
           mx="auto"
         >
@@ -83,7 +87,7 @@ const Navbar = () => {
               spy
               offset={-50}
               key={section.id}
-              fontSize={{ base: 'sm', md: 'md' }} // Slightly larger font for menu items
+              fontSize={{ base: 'xs', md: 'sm' }} // Smaller font size for menu items
               px={2}
               py={1}
               _hover={{ textDecoration: 'none', color: primaryColor }} // Corrected syntax
@@ -118,10 +122,11 @@ const Navbar = () => {
                 color={primaryColor}
                 _hover={{ bg: 'transparent' }} // Ensure no background or color change on hover
                 mx="0"
+                boxSize={{ base: '20px', md: '25px' }} // Smaller icon button size for a sleek look
               />
               <Text
                 ml={1}
-                fontSize={{ base: 'xs', md: 'sm' }} // Slightly smaller font size for small screens
+                fontSize={{ base: 'xs', md: 'sm' }} // Smaller font size for the text
                 whiteSpace="nowrap"
               >
                 {isLightMode ? 'Dark Mode' : 'Light Mode'}
@@ -129,7 +134,7 @@ const Navbar = () => {
             </Box>
           </Tooltip>
           <IconButton
-            size="md"
+            size="sm"
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
             aria-label="Toggle Navigation"
             display={{ md: 'none' }}
@@ -137,6 +142,7 @@ const Navbar = () => {
             bg="transparent"
             color={textColor}
             _hover={{ color: isOpen ? closeIconHoverColor : primaryColor }} // Professional hover color for the close icon
+            boxSize={{ base: '20px', md: '25px' }} // Smaller icon button size for a sleek look
           />
         </HStack>
       </Flex>
