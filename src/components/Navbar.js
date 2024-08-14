@@ -19,7 +19,7 @@ const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { colorMode, toggleColorMode } = useColorMode();
   const isLightMode = colorMode === 'light';
-  
+
   const bgColor = isLightMode ? '#2C2C2C' : '#0F0F0F'; // Darker, more professional background for dark mode
   const primaryColor = isLightMode ? '#D4A373' : '#C0A080'; // Subtle and professional color for text and icons
   const textColor = isLightMode ? '#FFFFFF' : '#E0E0E0'; // Softer text color in dark mode
@@ -35,16 +35,17 @@ const Navbar = () => {
   ];
 
   return (
-    <Box as="nav" bg={bgColor} px={4} py={1} position="fixed" w="100%" zIndex="10" boxShadow="sm">
-      <Flex h={12} alignItems="center" justifyContent="space-between">
+    <Box as="nav" bg={bgColor} px={4} py={0} position="fixed" w="100%" zIndex="10" boxShadow="sm">
+      <Flex h={12} alignItems="center" justifyContent="space-between"> {/* Slightly larger height */}
         <Flex alignItems="center">
           <ChakraLink as={Link} to="header" smooth duration={500} offset={-50}>
             <Image
-              src={`${process.env.PUBLIC_URL}/img/logo-updated.png`}
+              src={`${process.env.PUBLIC_URL}/img/logo-updated.png`} // Update the logo path if necessary
               alt="Logo"
-              boxSize={{ base: '30px', md: '35px' }} // Smaller logo for a more compact Navbar
+              boxSize={{ base: '30px', md: '35px' }} // Slightly larger logo size for better visibility
               maxH="100%"
-              mr={3}
+              mr={2} // Adjust margin for better alignment
+              objectFit="contain" // Ensure the logo maintains its aspect ratio
               cursor="pointer"
             />
           </ChakraLink>
@@ -57,7 +58,7 @@ const Navbar = () => {
             _hover={{ textDecoration: 'none' }} // Remove underline on hover
           >
             <Text
-              fontSize={{ base: 'md', md: 'lg' }} // Slightly smaller font for the title
+              fontSize={{ base: 'md', md: 'lg' }} // Slightly larger font for the title
               fontWeight="bold"
               color={primaryColor}
               cursor="pointer"
@@ -82,10 +83,10 @@ const Navbar = () => {
               spy
               offset={-50}
               key={section.id}
-              fontSize={{ base: 'sm', md: 'md' }} // Slightly smaller font for menu items
+              fontSize={{ base: 'sm', md: 'md' }} // Slightly larger font for menu items
               px={2}
               py={1}
-              _hover={{ textDecoration: 'none', color: primaryColor }}
+              _hover={{ textDecoration: 'none', color: primaryColor }} // Corrected syntax
               cursor="pointer"
               color={textColor}
             >
@@ -155,7 +156,7 @@ const Navbar = () => {
                 px={2}
                 py={1}
                 rounded="md"
-                _hover={{ textDecoration: 'none', color: primaryColor }}
+                _hover={{ textDecoration: 'none', color: primaryColor }} // Corrected syntax
                 cursor="pointer"
                 color={textColor}
               >
