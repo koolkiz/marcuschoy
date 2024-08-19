@@ -34,8 +34,9 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Data Analyst Intern',
       description: [
-        'Collaborated with an Olympic team analyst to develop an automated system for processing cycling race data, providing real-time visualizations and insights to enhance athlete performance.',
-        'Analyzed race metrics such as laps, patterns, and trends using R, and created detailed visual reports that supported strategic decisions.',
+        'Collaborated with the Data Lead to automate large triathlon datasets from various race formats worldwide, eliminating manual effort in calculating race laps and metrics.',
+        'Communicated regularly with the Data Lead, presenting innovative ideas and learning to solve complex problems through advanced research and out-of-the-box thinking.',
+        'Developed race lap calculations for varied formats and ground sizes using Python and R, providing insights to help coaches improve player performance and identify shortcomings.',
       ],
     },
     {
@@ -45,9 +46,9 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Sales Analyst',
       description: [
-        'Led analysis to reduce store hours by 10%, cutting operational costs by 15% without affecting customer satisfaction.',
-        'Designed and implemented a customer loyalty program that increased repeat business by 10%, significantly improving customer engagement.',
-        'Created guided technical documentation for the new loyalty program, ensuring smooth implementation across all stores in Australia.',
+        'Worked closely with the regional manager to adjust store hours in response to low sales, resulting in cost savings of over AUD 100,000 annually across ACT stores.',
+        'Analyzed sales trends from ACT stores, enabling our team to convince stakeholders to launch a new loyalty program that boosted sales by 10% across Australia.',
+        'Contributed to the success of the loyalty program by documenting guidelines for all stores nationwide and effectively communicating through email to resolve sales data queries from store managers.',
       ],
     },
     {
@@ -57,9 +58,9 @@ const Experience = () => {
       location: 'Kathmandu, Nepal',
       title: 'IT Operations Specialist',
       description: [
-        'Successfully implemented Nepal’s first government ERP project, ensuring seamless operations with zero downtime.',
-        'Managed IT systems across multiple branches, ensuring all hardware, software, and networking were optimized and operational.',
-        'Trained government employees on SAP Business One, enhancing their ability to use the system effectively.',
+        'Contributed to the implementation of Nepal\'s first government ERP system, achieving 99.9% uptime and reducing manual processing.',
+        'Delivered training on SAP Business One to over 50 government employees, which increased their operational efficiency by 20% and ensured the smooth adoption of the new system.',
+        '	Managed the IT infrastructure, which supported over 500 users across multiple departments, ensuring a 98% reduction in system downtime and contributing to continuous business operations.',
       ],
     },
     {
@@ -72,6 +73,7 @@ const Experience = () => {
         'Implemented LAN/WAN networks, modernizing office systems and enhancing overall infrastructure reliability.',
         'Configured networking devices and created VLANs to segment traffic, improving network security and performance.',
         'Provided tailored access control based on user roles, enhancing security and operational efficiency.',
+        'Communicated with stakeholders to ensure they were informed and understood any changes made to the network.',
       ],
     },
   ];
