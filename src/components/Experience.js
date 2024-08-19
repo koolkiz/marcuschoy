@@ -32,7 +32,7 @@ const Experience = () => {
       date: 'March 2024 – July 2024',
       company: 'AusTriathlon',
       location: 'Canberra, Australia',
-      title: 'Data Analyst',
+      title: 'Data Analyst Intern',
       description: [
         'Collaborated with an Olympic team analyst to develop an automated system for processing cycling race data, providing real-time visualizations and insights to enhance athlete performance.',
         'Analyzed race metrics such as laps, patterns, and trends using R, and created detailed visual reports that supported strategic decisions.',
