@@ -53,11 +53,11 @@ const Experience = () => {
       link: 'https://www.shoesandsox.com.au',
       hoverColor: 'rgba(255, 165, 0, 0.15)',
       location: 'Canberra, Australia',
-      title: 'Sales Analyst',
+      title: 'Sales Assistant',
       description: [
         'Optimized store hours, saving AUD 100k annually across ACT stores.',
         'Analyzed sales trends to support the launch of a loyalty program that increased sales by 10%.',
-        'Documented guidelines and communicated with store managers to resolve data queries.',
+        'Documented guidelines and communicated with store managers to resolve queries.',
       ],
       tags: ['Sales Analysis', 'Data Reporting', 'Cost Optimization'],
       progress: 90,
