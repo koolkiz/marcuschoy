@@ -9,14 +9,12 @@ import {
 import { motion } from 'framer-motion';
 
 const About = () => {
-  // Define color scheme based on the provided palettes
-  const bg = useColorModeValue('#f0f4f8', '#19181A'); // Light or Dark background color
+  const bg = useColorModeValue('#f0f4f8', '#19181A');
   const textColor = useColorModeValue('#19181A', '#E2E8F0');
   const headingColor = useColorModeValue('#E7717D', '#CEBC81');
   const subHeadingColor = useColorModeValue('#CEBC81', '#FFD700');
   const highlightColor = useColorModeValue('#A16E83', '#FFD700');
 
-  // Animation variants for the container transitions
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },

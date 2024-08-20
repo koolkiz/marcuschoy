@@ -7,138 +7,221 @@ import {
   Flex,
   Text,
   Image,
+  Progress,
+  Tag,
+  Wrap,
+  WrapItem,
   useColorModeValue,
+  Link,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-const cardVariant = {
-  hidden: { opacity: 0, y: 50, scale: 0.9 },
-  visible: { opacity: 1, y: 0, scale: 1, transition: { type: 'spring', stiffness: 200, damping: 15 } },
-  hover: { scale: 1.08, transition: { duration: 0.2, type: 'spring', stiffness: 250, damping: 15 } },
-};
-
 const Experience = () => {
-  const sectionBg = useColorModeValue('#E0E5EC', '#2A2E35');
-  const sectionColor = useColorModeValue('#19181A', '#E2E8F0');
-  const cardBg = useColorModeValue('#ffffff', '#333842');
-  const cardHoverBg = useColorModeValue('#ADD8E6', '#3B3F44');
-  const headingColor = useColorModeValue('#3182ce', '#FFD700');
-  const textColor = useColorModeValue('#333', '#E2E8F0');
+  const sectionBg = useColorModeValue(
+    'linear-gradient(135deg, #F7FAFC 0%, #E3F2FD 100%)',
+    'linear-gradient(135deg, #1A202C 0%, #2D3748 100%)'
+  );
+  const sectionColor = useColorModeValue('#2D3748', '#E2E8F0');
+  const cardBg = useColorModeValue('#FFFFFF', '#2D3748');
+  const headingColor = useColorModeValue('#2B6CB0', '#FFD700');
+  const textColor = useColorModeValue('#2D3748', '#E2E8F0');
   const secondaryTextColor = useColorModeValue('#718096', '#A0AEC0');
+  const tagHoverColor = useColorModeValue('teal.600', 'teal.300');
 
   const experiences = [
     {
       logo: `${process.env.PUBLIC_URL}/img/austriathlon-logo.png`,
-      date: 'March 2024 – July 2024',
+      date: 'Mar 2024 – Jul 2024',
       company: 'AusTriathlon',
+      link: 'https://www.triathlon.org.au/',
+      hoverColor: 'rgba(33, 150, 243, 0.15)',
       location: 'Canberra, Australia',
       title: 'Data Analyst Intern',
       description: [
-        'Collaborated with the Data Lead to automate large triathlon datasets from various race formats worldwide, eliminating manual effort in calculating race laps and metrics.',
-        'Communicated regularly with the Data Lead, presenting innovative ideas and learning to solve complex problems through advanced research and out-of-the-box thinking.',
-        'Developed race lap calculations for varied formats and ground sizes using Python and R, providing insights to help coaches improve player performance and identify shortcomings.',
+        'Automated triathlon datasets, reducing manual effort in calculating laps and metrics.',
+        'Collaborated on innovative solutions to complex problems through advanced research.',
+        'Developed race lap calculations using Python and R to enhance player performance analysis.',
       ],
+      tags: ['Python', 'R', 'Data Automation', 'Analytics'],
+      progress: 90,
+      learning: 'Gained deep insights into data automation and sports analytics using Python and R.'
     },
     {
       logo: `${process.env.PUBLIC_URL}/img/shoesandsox-logo.png`,
-      date: 'July 2022 – May 2024',
+      date: 'Jul 2022 – May 2024',
       company: 'Shoes and Sox',
+      link: 'https://www.shoesandsox.com.au',
+      hoverColor: 'rgba(255, 165, 0, 0.15)',
       location: 'Canberra, Australia',
       title: 'Sales Analyst',
       description: [
-        'Worked closely with the regional manager to adjust store hours in response to low sales, resulting in cost savings of over AUD 100,000 annually across ACT stores.',
-        'Analyzed sales trends from ACT stores, enabling our team to convince stakeholders to launch a new loyalty program that boosted sales by 10% across Australia.',
-        'Contributed to the success of the loyalty program by documenting guidelines for all stores nationwide and effectively communicating through email to resolve sales data queries from store managers.',
+        'Optimized store hours, saving AUD 100k annually across ACT stores.',
+        'Analyzed sales trends to support the launch of a loyalty program that increased sales by 10%.',
+        'Documented guidelines and communicated with store managers to resolve data queries.',
       ],
+      tags: ['Sales Analysis', 'Data Reporting', 'Cost Optimization'],
+      progress: 90,
+      learning: 'Learned how data-driven decisions impact sales and efficiency.'
     },
     {
       logo: `${process.env.PUBLIC_URL}/img/nepaloilcorp-logo.png`,
-      date: 'November 2020 – November 2021',
+      date: 'Nov 2020 – Nov 2021',
       company: 'Nepal Oil Corporation',
+      link: 'https://noc.org.np/',
+      hoverColor: 'rgba(244, 67, 54, 0.15)',
       location: 'Kathmandu, Nepal',
       title: 'IT Operations Specialist',
       description: [
-        'Contributed to the implementation of Nepal\'s first government ERP system, achieving 99.9% uptime and reducing manual processing.',
-        'Delivered training on SAP Business One to over 50 government employees, which increased their operational efficiency by 20% and ensured the smooth adoption of the new system.',
-        '	Managed the IT infrastructure, which supported over 500 users across multiple departments, ensuring a 98% reduction in system downtime and contributing to continuous business operations.',
+        'Implemented Nepal\'s first government ERP system, achieving 99.9% uptime.',
+        'Trained 50+ employees on SAP Business One, boosting efficiency by 20%.',
+        'Managed IT infrastructure, reducing system downtime.',
       ],
+      tags: ['ERP', 'IT Management', 'Training'],
+      progress: 95,
+      learning: 'Mastered ERP deployment and IT management, ensuring system uptime and effective training.'
     },
     {
       logo: `${process.env.PUBLIC_URL}/img/outsource-array-logo.png`,
-      date: 'November 2019 – February 2020',
+      date: 'Nov 2019 – Feb 2020',
       company: 'Outsource Array',
+      link: 'https://www.outsourcearray.com',
+      hoverColor: 'rgba(76, 175, 80, 0.15)',
       location: 'Kathmandu, Nepal',
       title: 'Network Engineer Intern',
       description: [
-        'Implemented LAN/WAN networks, modernizing office systems and enhancing overall infrastructure reliability.',
-        'Configured networking devices and created VLANs to segment traffic, improving network security and performance.',
-        'Provided tailored access control based on user roles, enhancing security and operational efficiency.',
-        'Communicated with stakeholders to ensure they were informed and understood any changes made to the network.',
+        'Enhanced network reliability through LAN/WAN optimizations.',
+        'Improved security with VLAN configurations and tailored access controls.',
+        'Communicated changes effectively to stakeholders, enhancing operational efficiency.',
       ],
+      tags: ['Networking', 'Security', 'LAN/WAN'],
+      progress: 80,
+      learning: 'Gained experience in networking and security, focusing on performance optimization.'
     },
   ];
 
   return (
-    <Box as="section" bg={sectionBg} color={sectionColor} py={20} px={4} id="experience">
-      <Container maxW="container.xl" textAlign="center">
-        <Heading as="h2" size="xl" mb={12} color={headingColor}>
+    <Box as="section" bg={sectionBg} color={sectionColor} py={20} px={4} id="experience" position="relative">
+      <Container maxW="container.xl">
+        <Heading
+          as="h2"
+          size="xl"
+          mb={12}
+          color={headingColor}
+          textAlign="center"
+          fontFamily="Poppins, sans-serif"
+          fontWeight="extrabold"
+          letterSpacing="wide"
+        >
           Experience 👨‍💻
         </Heading>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           {experiences.map((experience, index) => (
             <motion.div
               key={index}
-              variants={cardVariant}
-              initial="hidden"
-              animate="visible"
-              whileHover="hover"
-              transition={{ delay: index * 0.1 }}
+              whileHover={{ translateY: -10 }}
+              transition={{ duration: 0.3 }}
             >
               <Box
                 bg={cardBg}
                 color={textColor}
-                p={6}
+                p={8}
                 borderRadius="lg"
-                boxShadow="lg"
-                _hover={{ bg: cardHoverBg }}
-                transition="background-color 0.2s, transform 0.2s"
+                boxShadow="2xl"
+                position="relative"
+                _before={{
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  bg: experience.hoverColor,
+                  zIndex: 0,
+                  transition: 'opacity 0.3s ease-in-out',
+                  opacity: 0,
+                }}
+                _hover={{
+                  _before: {
+                    opacity: 1,
+                  },
+                  boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.2)',
+                  transform: 'translateY(-10px)',
+                }}
+                transition="background-color 0.3s ease, transform 0.3s ease"
                 h="100%"
                 display="flex"
                 flexDirection="column"
                 justifyContent="space-between"
               >
-                <Flex align="center" mb={4}>
+                <Flex align="center" mb={4} zIndex={1} position="relative">
                   <Image
                     src={experience.logo}
                     alt={experience.company}
                     borderRadius="full"
-                    boxSize="60px"
+                    boxSize={{ base: "60px", md: "70px" }}
                     mr={4}
                     objectFit="contain"
                   />
                   <Box textAlign="left">
-                    <Text fontWeight="bold" fontSize="md" color={textColor}>
+                    <Link href={experience.link} isExternal fontWeight="bold" fontSize={{ base: "md", md: "lg" }} color={headingColor} _hover={{ textDecoration: 'underline' }}>
                       {experience.company}
-                    </Text>
-                    <Text fontSize="sm" color={secondaryTextColor}>
+                    </Link>
+                    <Text fontSize={{ base: "sm", md: "md" }} color={secondaryTextColor} fontStyle="italic">
                       {experience.location}
                     </Text>
-                    <Text fontSize="sm" color={secondaryTextColor}>
+                    <Text fontSize={{ base: "sm", md: "md" }} color={secondaryTextColor}>
                       {experience.date}
                     </Text>
                   </Box>
                 </Flex>
-                <Box textAlign="center" mb={4}>
-                  <Text fontWeight="bold" fontSize="lg" color={headingColor}>
+                <Box textAlign="center" mb={4} zIndex={1} position="relative">
+                  <Text
+                    fontWeight="bold"
+                    fontSize={{ base: "lg", md: "xl" }}
+                    color={headingColor}
+                    fontFamily="Poppins, sans-serif"
+                    letterSpacing="wider"
+                  >
                     {experience.title}
                   </Text>
                 </Box>
-                <Box as="ul" pl={4} mt={2} color={textColor} textAlign="left">
+                <Box as="ul" pl={4} mt={4} color={textColor} textAlign="left" zIndex={1} position="relative">
                   {experience.description.map((desc, i) => (
-                    <Text as="li" mb={2} key={i} display="flex" alignItems="center">
+                    <Text as="li" mb={3} key={i} display="flex" alignItems="center" fontSize="sm">
                       <Box as="span" color={headingColor} mr={2}>•</Box> {desc}
                     </Text>
                   ))}
+                </Box>
+                <Wrap mt={4} spacing={2} justify="center">
+                  {experience.tags.map((tag, i) => (
+                    <WrapItem key={i}>
+                      <Tag
+                        size="md"
+                        variant="solid"
+                        colorScheme="teal"
+                        borderRadius="full"
+                        cursor="pointer"
+                        _hover={{ transform: "scale(1.2)", backgroundColor: tagHoverColor }}
+                        transition="all 0.3s ease-in-out"
+                      >
+                        {tag}
+                      </Tag>
+                    </WrapItem>
+                  ))}
+                </Wrap>
+                <Box mt={4}>
+                  <Text fontSize="sm" fontWeight="bold" color={headingColor}>
+                    Impact & Performance:
+                  </Text>
+                  <Progress colorScheme="teal" size="sm" value={experience.progress} mt={2} borderRadius="md" />
+                </Box>
+                <Box mt={4}>
+                  <Text fontSize="sm" fontWeight="bold" color={headingColor}>
+                    Key Learning:
+                  </Text>
+                  <Text fontSize="sm" mt={2} color={secondaryTextColor}>
+                    {experience.learning}
+                  </Text>
                 </Box>
               </Box>
             </motion.div>

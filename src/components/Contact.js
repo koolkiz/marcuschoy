@@ -13,7 +13,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { FaGithub } from 'react-icons/fa';
-import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -64,39 +63,39 @@ const Contact = () => {
       });
   };
 
-  const textColor = useColorModeValue('#333', '#E2E8F0');
-  const borderColor = useColorModeValue('#CCCCCC', '#555555');
-  const inputBg = useColorModeValue('#FFFFFF', '#3D3D3D');
-  const inputFocusBorder = useColorModeValue('#3182ce', '#90CDF4');
-  const sectionBg = useColorModeValue('#ebebe7', '#263238');
+  const textColor = useColorModeValue('#2D3748', '#E2E8F0');
+  const borderColor = useColorModeValue('#E2E8F0', '#4A5568');
+  const inputBg = useColorModeValue('#FFFFFF', '#2D3748');
+  const inputFocusBorder = useColorModeValue('#3182ce', '#63B3ED');
+  const sectionBg = useColorModeValue('transparent', 'rgba(0, 0, 0, 0.8)');
+  const buttonBg = useColorModeValue('#3182ce', '#63B3ED');
+  const buttonHoverBg = useColorModeValue('#2C7A7B', '#3B82F6');
+  const githubHoverColor = useColorModeValue('#2C7A7B', '#63B3ED');
 
   return (
     <Box
       as="section"
       bg={sectionBg}
       color={textColor}
-      py={16}
+      py={24} 
       id="contact"
-      borderRadius="lg"
-      boxShadow="lg"
       position="relative"
-      overflow="hidden"
     >
-      <Container maxW="container.md" textAlign="center">
+      <Container maxW="container.sm" textAlign="center">
         <Heading
-          as={motion.h2}
-          size="xl"
-          mb={10}
-          color={textColor}
+          as="h2"
+          size="lg"
+          mb={6}
           fontWeight="bold"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
+          letterSpacing="wider"
         >
           Get in Touch 📬
         </Heading>
         <form onSubmit={handleSubmit}>
-          <VStack spacing={6} align="stretch">
+          <VStack spacing={4} align="stretch">
             <Input
               placeholder="Your Name"
               name="name"
@@ -105,12 +104,11 @@ const Contact = () => {
               borderColor={borderColor}
               bg={inputBg}
               _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
+              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
               isRequired
-              as={motion.input}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              size="md"
+              borderRadius="md"
+              fontSize="sm"
             />
             <Input
               placeholder="Your Email"
@@ -121,12 +119,11 @@ const Contact = () => {
               borderColor={borderColor}
               bg={inputBg}
               _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
+              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
               isRequired
-              as={motion.input}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
+              size="md"
+              borderRadius="md"
+              fontSize="sm"
             />
             <Textarea
               placeholder="Your Message"
@@ -136,48 +133,45 @@ const Contact = () => {
               borderColor={borderColor}
               bg={inputBg}
               _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: '0 0 0 1px #3182ce' }}
+              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
               isRequired
-              as={motion.textarea}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7 }}
+              size="md"
+              borderRadius="md"
+              fontSize="sm"
             />
           </VStack>
           <Button
             type="submit"
-            colorScheme="teal"
-            bg="#479761"
-            _hover={{ bg: '#367d5b', transform: 'scale(1.05)' }}
-            size="lg"
-            mt={8}
-            isFullWidth
+            bg={buttonBg}
+            color="white"
+            _hover={{ bg: buttonHoverBg, transform: 'scale(1.03)' }}
+            size="md"
+            mt={6}
+            width="full"
             transition="all 0.3s"
-            as={motion.button}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            borderRadius="md"
+            fontSize="sm"
           >
             Send Message 💬
           </Button>
         </form>
-        <Flex justify="center" mt={8}>
+        <Flex justify="center" mt={6}>
           <Link href="https://github.com/acharyaarish" isExternal>
             <Button
               leftIcon={<FaGithub />}
               colorScheme="gray"
-              variant="ghost"
-              fontSize="2xl"
-              _hover={{ color: 'teal.500' }}
-              as={motion.button}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+              variant="outline"
+              fontSize="lg"
+              _hover={{ color: githubHoverColor, transform: 'scale(1.05)' }}
+              size="md"
+              fontWeight="bold"
+              borderRadius="md"
             >
               GitHub
             </Button>
           </Link>
         </Flex>
-        <Box mt={8} fontSize="sm" color={textColor}>
+        <Box mt={6} fontSize="xs" color={textColor}>
           &copy; 2024 Arish Acharya - All rights reserved.
         </Box>
       </Container>

@@ -8,120 +8,148 @@ import {
   Link,
   Image,
   VStack,
+  Button,
   useColorModeValue,
+  Stack,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 const projects = [
   {
     name: 'Python Dashboard',
-    link: 'https://github.com/acharyaarish/Python_Dashboard',
-    description: 'Wildlife Incident Analysis Report for the Australian Capital Territory (ACT) spans from 2016 to 2024, offering in-depth insights into wildlife-related incidents. Made using Python Dash and Plotly package and hosted in AWS EC2.',
-    tags: ['Python', 'Dashboard', 'AWS'],
+    link: 'http://ec2-52-62-61-15.ap-southeast-2.compute.amazonaws.com/',
+    description: 'Deatailed Wildlife Incidents Records with location in Canberra Region from Government Dataset. Made in Python and hosted in AWS EC2.',
+    hoverColor: 'rgba(56, 142, 60, 0.1)',
   },
   {
     name: 'Dog Breed Detector',
     link: 'https://github.com/acharyaarish/dog_breed_detector',
-    description: 'The Dog Breed Detector is a web application that challenges users to identify dog breeds from images provided by the Dog CEO API. Built with a React frontend, Node.js backend, and SQLite for the database.',
-    tags: ['Node.js', 'React', 'API'],
+    description: 'Web app that challenges users to identify dog breeds from images using the Dog CEO API. Built with React, Node.js, and SQLite.',
+    hoverColor: 'rgba(255, 165, 0, 0.1)',
   },
   {
     name: 'Wildlife Incidents Report',
     link: 'https://github.com/acharyaarish/Python_Dashboard/blob/main/Wildlife%20Incidents%20ACT.pdf',
-    description: 'This report offers an incisive look at kangaroo incidents in the Australian Capital Territory from 2016 to 2024, identifying key hotspots, peak times, and the species involved. It provides essential insights for effectively managing and reducing these occurrences.',
-    tags: ['Report', 'Analysis', 'Wildlife'],
+    description: 'Detailed report on kangaroo incidents in the ACT from 2016 to 2024, identifying hotspots, peak times, and species involved.',
+    hoverColor: 'rgba(244, 67, 54, 0.1)',
   },
   {
     name: 'IoT Project',
     link: 'https://github.com/acharyaarish/Excel_Dashboard',
-    description: 'I developed this IoT project to enhance home security, utilizing a Raspberry Pi and camera module to detect nearby human activity. By integrating Python cv2 package, the system captures images and sends alerts through text and email when someone approaches the main entrance.',
-    tags: ['IoT', 'Security', 'Automation'],
+    description: 'Enhanced home security system using Raspberry Pi, camera module, and Python to detect human activity and send alerts.',
+    hoverColor: 'rgba(33, 150, 243, 0.1)',
   },
   {
     name: 'Excel Dashboard',
     link: 'https://github.com/acharyaarish/Excel_Dashboard',
-    description: 'I created this Excel Dashboard for my university project to analyze supermarket sales. It utilizes a PivotTable to organize, summarize, and visually display transaction data across three sheets: All Simulated Data, Dashboard, and Data Dashboard. This tool simplifies retail insights and aids in effective decision-making.',
-    tags: ['Excel', 'Dashboard', 'Sales'],
+    description: 'Excel Dashboard analyzing supermarket sales, utilizing PivotTables for data visualization and decision-making.',
+    hoverColor: 'rgba(255, 193, 7, 0.1)',
   },
   {
     name: 'Professor',
     link: 'https://paldip.com/',
-    description: 'Assisted my University Professor with testing, debugging, and adding new features for his Edtech Platform. We implemented a QR system for attendance, PostHog for Analytics, and fixed minor bugs.',
-    tags: ['Edtech', 'Testing', 'Debugging'],
+    description: 'Assisted with testing, debugging, and feature additions for an Edtech Platform, including implementing a QR-based attendance system.',
+    hoverColor: 'rgba(76, 175, 80, 0.1)',
   },
 ];
 
 const Projects = () => {
-  const bgColor = useColorModeValue('#EDF2F7', '#1A202C');
-  const textColor = useColorModeValue('#2D3748', '#E2E8F0');
-  const linkColor = useColorModeValue('#2B6CB0', '#90CDF4');
-  const cardBgColor = useColorModeValue('#FFFFFF', '#2D3748');
-  const cardHoverBgColor = useColorModeValue('#E2E8F0', '#3B3F44');
-  const tagBgColor = useColorModeValue('#3182CE', '#577B91');
+  const bgColor = useColorModeValue('#edf2f7', '#1a202c');
+  const cardBgColor = useColorModeValue('#ffffff', '#2d3748');
+  const textColor = useColorModeValue('gray.800', 'gray.200');
+  const buttonBgColor = useColorModeValue('#3182ce', '#63b3ed');
+  const buttonHoverBgColor = useColorModeValue('#2b6cb0', '#4299e1');
+  const linkColor = useColorModeValue('#2c5282', '#90cdf4');
+  const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   return (
-    <Box as="section" bg={bgColor} color={textColor} id="projects" py={20} px={4}>
-      <Container maxW="container.xl" textAlign="center">
-        <Heading as="h2" size="xl" mb={8} color={linkColor}>
+    <Box as="section" bg={bgColor} color={textColor} id="projects" py={20}>  {/* Added id="projects" */}
+      <Container maxW="container.xl">
+        <Heading as="h2" size="xl" mb={16} fontWeight="bold" color={linkColor} textAlign="center">
           Projects 🚀
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3 }}
+              whileHover={{ scale: 1.05, rotate: 0.5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <Box
                 bg={cardBgColor}
-                borderRadius="lg"
-                boxShadow="xl"
-                p={6}
-                height="100%"
-                display="flex"
-                flexDirection="column"
-                justifyContent="space-between"
-                _hover={{ bg: cardHoverBgColor }}
-                transition="background-color 0.3s ease"
+                borderRadius="xl"
+                boxShadow="2xl"
+                overflow="hidden"
+                border={`1px solid ${borderColor}`}
+                transition="background-color 0.3s ease-in-out, transform 0.3s ease-in-out"
+                position="relative"
+                _before={{
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  bg: project.hoverColor,
+                  zIndex: 0,
+                  transition: 'opacity 0.3s ease-in-out',
+                  opacity: 0,
+                }}
+                _hover={{
+                  bg: project.hoverColor,
+                  boxShadow: "xl",
+                  transform: "scale(1.05)",
+                  _before: {
+                    opacity: 1,
+                  },
+                }}
               >
-                <VStack spacing={4} align="start">
-                  <Image
-                    src={`${process.env.PUBLIC_URL}/img/${project.name.toLowerCase().replace(/\s+/g, '-')}.png`}
-                    alt={project.name}
+                <VStack align="stretch" spacing={5} p={6} position="relative" zIndex={1}>
+                  <Box
+                    overflow="hidden"
                     borderRadius="lg"
-                    objectFit="cover"
                     height="200px"
+                  >
+                    <Image
+                      src={`${process.env.PUBLIC_URL}/img/${project.name.toLowerCase().replace(/\s+/g, '-')}.png`}
+                      alt={project.name}
+                      borderRadius="lg"
+                      objectFit="cover"
+                      width="100%"
+                      height="100%"
+                    />
+                  </Box>
+                  <Box flex="1" textAlign="center">
+                    <Heading as="h3" size="md" color={linkColor} mb={3}>
+                      {project.name}
+                    </Heading>
+                    <Text fontSize="sm" color={textColor} noOfLines={3}>
+                      {project.description}
+                    </Text>
+                  </Box>
+                  <Stack
+                    direction={{ base: 'column', sm: 'row' }}
+                    spacing={3}
+                    mt={4}
                     width="100%"
-                  />
-                  <Box>
-                    <Link
+                    justifyContent="center"
+                  >
+                    <Button
+                      as={Link}
                       href={project.link}
                       isExternal
-                      fontSize="lg"
-                      fontWeight="bold"
-                      color={linkColor}
-                      _hover={{ textDecoration: 'underline' }}
+                      bg={buttonBgColor}
+                      color="white"
+                      flex={{ base: '1', sm: 'auto' }}
+                      _hover={{ bg: buttonHoverBgColor }}
+                      size="md"
+                      borderRadius="full"
+                      py={4}
+                      textDecoration="none"
                     >
-                      {project.name}
-                    </Link>
-                    <Text color={textColor}>{project.description}</Text>
-                  </Box>
-                  <Box mt="auto" display="flex" justifyContent="center" width="100%">
-                    {project.tags.map((tag, i) => (
-                      <Text
-                        as="span"
-                        key={i}
-                        bg={tagBgColor}
-                        color="white"
-                        p={1}
-                        borderRadius="md"
-                        mr={2}
-                        fontSize="sm"
-                      >
-                        {tag}
-                      </Text>
-                    ))}
-                  </Box>
+                      View Project
+                    </Button>
+                  </Stack>
                 </VStack>
               </Box>
             </motion.div>
