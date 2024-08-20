@@ -12,7 +12,7 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -70,7 +70,7 @@ const Contact = () => {
   const sectionBg = useColorModeValue('transparent', 'rgba(0, 0, 0, 0.8)');
   const buttonBg = useColorModeValue('#3182ce', '#63B3ED');
   const buttonHoverBg = useColorModeValue('#2C7A7B', '#3B82F6');
-  const githubHoverColor = useColorModeValue('#2C7A7B', '#63B3ED');
+  const iconHoverColor = useColorModeValue('#2C7A7B', '#63B3ED');
 
   return (
     <Box
@@ -162,12 +162,27 @@ const Contact = () => {
               colorScheme="gray"
               variant="outline"
               fontSize="lg"
-              _hover={{ color: githubHoverColor, transform: 'scale(1.05)' }}
+              _hover={{ color: iconHoverColor, transform: 'scale(1.05)' }}
+              size="md"
+              fontWeight="bold"
+              borderRadius="md"
+              mr={4}
+            >
+              GitHub
+            </Button>
+          </Link>
+          <Link href="https://www.linkedin.com/in/arish-acharya-b1a0a2322/" isExternal>
+            <Button
+              leftIcon={<FaLinkedin />}
+              colorScheme="gray"
+              variant="outline"
+              fontSize="lg"
+              _hover={{ color: iconHoverColor, transform: 'scale(1.05)' }}
               size="md"
               fontWeight="bold"
               borderRadius="md"
             >
-              GitHub
+              LinkedIn
             </Button>
           </Link>
         </Flex>
