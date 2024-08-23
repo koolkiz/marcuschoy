@@ -5,6 +5,8 @@ import {
   Heading,
   Text,
   useColorModeValue,
+  VStack,
+  HStack,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
@@ -32,9 +34,18 @@ const About = () => {
     visible: { opacity: 1, scale: 1 },
   };
 
-  const textVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
+  const wordBounce = {
+    hover: {
+      scale: 1.1,
+      transition: { type: 'spring', stiffness: 300 },
+    },
+  };
+
+  const emojiBounce = {
+    hover: {
+      y: -5,
+      transition: { yoyo: Infinity, duration: 0.3 },
+    },
   };
 
   return (
@@ -58,7 +69,7 @@ const About = () => {
       <Container maxW="container.lg" textAlign="center">
         <Heading
           as={motion.h2}
-          size="xl"
+          size="2xl"
           mb={8}
           color={headingColor}
           initial="hidden"
@@ -69,51 +80,64 @@ const About = () => {
           letterSpacing="tight"
           lineHeight="shorter"
         >
-          About Me <span role="img" aria-label="wave">👋</span>
+          <motion.span variants={wordBounce} whileHover="hover">
+            About Me
+          </motion.span> <motion.span role="img" aria-label="wave" variants={emojiBounce} whileHover="hover">👋</motion.span>
         </Heading>
-        <Text
-          as={motion.p}
-          fontSize="lg"
-          mb={8}
-          color={subHeadingColor}
-          fontWeight="bold"
-          letterSpacing="wide"
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.7, delay: 0.3 }}
-        >
-          Tech Enthusiast, Coffee Lover & Adventurer <span role="img" aria-label="coffee">☕</span> <span role="img" aria-label="mountain">🏔️</span>
-        </Text>
-        <Text
-          fontSize="md"
-          mb={10}
-          color={textColor}
-          maxW="container.md"
-          mx="auto"
-          lineHeight="taller"
-          letterSpacing="normal"
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.7, delay: 0.5 }}
-        >
-          I've been in love with tech since my mother's womb. I adore coffee, but let's be honest - the best coffee is the one I brew at home. Even my pug agrees, but please don't tell anyone. I'm always learning and improving in data science, and in my free time, you guessed it, I’m probably making more coffee.
-        </Text>
-        <Text
-          as={motion.p}
-          fontSize="xl"
-          fontWeight="bold"
-          color={highlightColor}
-          letterSpacing="tight"
-          lineHeight="short"
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          transition={{ duration: 0.7, delay: 0.7 }}
-        >
-          "Data is the new oil, and I’m here to refine it!" <span role="img" aria-label="lightbulb">💡</span>
-        </Text>
+        <VStack spacing={6} align="center">
+          <Text
+            as={motion.p}
+            fontSize="xl"
+            color={subHeadingColor}
+            fontWeight="bold"
+            letterSpacing="wide"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.3 }}
+            maxW="container.md"
+          >
+            <motion.span variants={wordBounce} whileHover="hover">
+              Tech Enthusiast,
+            </motion.span> <motion.span variants={wordBounce} whileHover="hover">
+              Coffee Lover 
+            </motion.span> & <motion.span variants={wordBounce} whileHover="hover">
+              Adventurer
+            </motion.span> 
+            <HStack spacing={2} display="inline-flex">
+              <motion.span role="img" aria-label="coffee" variants={emojiBounce} whileHover="hover">☕</motion.span> 
+              <motion.span role="img" aria-label="mountain" variants={emojiBounce} whileHover="hover">🏔️</motion.span>
+            </HStack>
+          </Text>
+          <Text
+            fontSize="md"
+            color={textColor}
+            maxW="container.md"
+            mx="auto"
+            lineHeight="taller"
+            letterSpacing="normal"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.5 }}
+          >
+            From fixing computers as the neighborhood tech guy to setting up networks and working on ERP systems, I've always loved tech. My journey has taken me from my uncle’s logistics business to my father’s media company, and now to Australia, where I’ve automated data for the Olympic team. I’m constantly refining my skills in data science and brewing the best coffee at home. Even my pug agrees, but let’s keep that between us!
+          </Text>
+          <Text
+            as={motion.p}
+            fontSize="xl"
+            fontWeight="bold"
+            color={highlightColor}
+            letterSpacing="tight"
+            lineHeight="short"
+            initial="hidden"
+            animate="visible"
+            transition={{ duration: 0.7, delay: 0.7 }}
+            textAlign="center"
+          >
+            <motion.span variants={wordBounce} whileHover="hover">
+              "Data is the new oil, and I’m here to refine it!"
+            </motion.span> <motion.span role="img" aria-label="lightbulb" variants={emojiBounce} whileHover="hover">💡</motion.span>
+          </Text>
+        </VStack>
       </Container>
     </Box>
   );
