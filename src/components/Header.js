@@ -42,13 +42,14 @@ const Header = () => {
       id="header"
       position="relative"
       overflow="hidden"
-      height={{ base: "80vh", md: "100vh" }}
+      height="100vh"  // Ensures full screen height on all devices
       display="flex"
       flexDirection="column"
       alignItems="center"
       justifyContent="center"
       textAlign="center"
-      px={4}
+      p={0}  // Remove padding to prevent any overflow issues
+      m={0}  // Remove margin to ensure full screen coverage
     >
       <video
         ref={videoRef}
