@@ -48,7 +48,7 @@ const Experience = () => {
     },
     {
       logo: `${process.env.PUBLIC_URL}/img/shoesandsox-logo.png`,
-      date: 'Jul 2022 – Present',
+      date: 'Jul 2022 – Feb 2024',
       company: 'Shoes and Sox',
       link: 'https://www.shoesandsox.com.au',
       hoverColor: 'rgba(255, 165, 0, 0.15)',
