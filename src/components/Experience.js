@@ -53,7 +53,7 @@ const Experience = () => {
       link: 'https://www.shoesandsox.com.au',
       hoverColor: 'rgba(255, 165, 0, 0.15)',
       location: 'Canberra, Australia',
-      title: 'Sales Assistant',
+      title: 'Assistant Manager',
       description: [
         'Handled daily sales reporting, managed admin duties like ordering, email queries, and phone inquiries.',
         'Worked with the regional manager to cut store hours during low sales, saving AUD 100,000 annually across ACT stores.',
