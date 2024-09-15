@@ -12,7 +12,7 @@ import {
   VStack,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub} from 'react-icons/fa';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -169,20 +169,6 @@ const Contact = () => {
               mr={4}
             >
               GitHub
-            </Button>
-          </Link>
-          <Link href="https://www.linkedin.com/in/arish-acharya-b1a0a2322/" isExternal>
-            <Button
-              leftIcon={<FaLinkedin />}
-              colorScheme="gray"
-              variant="outline"
-              fontSize="lg"
-              _hover={{ color: iconHoverColor, transform: 'scale(1.05)' }}
-              size="md"
-              fontWeight="bold"
-              borderRadius="md"
-            >
-              LinkedIn
             </Button>
           </Link>
         </Flex>
