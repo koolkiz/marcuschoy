@@ -52,8 +52,8 @@ const Experience = () => {
       company: 'Shoes and Sox',
       link: 'https://www.shoesandsox.com.au',
       hoverColor: 'rgba(255, 165, 0, 0.15)',
-      location: 'Canberra, Australia',
-      title: 'Sales Analyst',
+      location: 'Melbourne, Australia',
+      title: 'Sales Analyst (Remote)',
       description: [
         'Developed and maintained automated Excel dashboards for real-time sales reporting to the management.',
         'Analyzed sales trends and KPIs, helping the team optimize store performance and cut costs by AUD 500k annually.',
