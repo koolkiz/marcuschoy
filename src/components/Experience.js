@@ -53,10 +53,9 @@ const Experience = () => {
       link: 'https://www.shoesandsox.com.au',
       hoverColor: 'rgba(255, 165, 0, 0.15)',
       location: 'Melbourne, Australia',
-      title: 'Sales Analyst (Remote)',
+      title: 'Sales Assistant',
       description: [
-        'Developed and maintained automated Excel dashboards for real-time sales reporting to the management.',
-        'Analyzed sales trends and KPIs, helping the team optimize store performance and cut costs by AUD 500k annually.',
+        'Learned to interact with customers, assisting them in selecting the best products, while also managing daily administrative tasks such as sales reporting, tracking KPIs, analyzing top-selling and underperforming products, and helping to manage the budget.',
         'Contributed to launching a new loyalty program, wrote documentation, and trained team members on the new system.',
       ],
       tags: ['Sales Analysis', 'Data Reporting', 'Cost Optimization'],
