@@ -24,7 +24,7 @@ const projects = [
   {
     name: 'Dog Breed Detector',
     link: 'https://github.com/acharyaarish/dog_breed_detector',
-    description: 'Web app that challenges users to identify dog breeds from images using the Dog CEO API. Built with React, Node.js, and SQLite.',
+    description: 'Web game that challenges users to identify dog breeds from images using the Dog CEO API. Built with React, Node.js, and SQLite.',
     hoverColor: 'rgba(255, 165, 0, 0.1)',
   },
   {
