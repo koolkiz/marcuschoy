@@ -52,7 +52,7 @@ const Experience = () => {
       company: 'Shoes and Sox',
       link: 'https://www.shoesandsox.com.au',
       hoverColor: 'rgba(255, 165, 0, 0.15)',
-      location: 'Melbourne, Australia',
+      location: 'Canberra, Australia',
       title: 'Sales Assistant',
       description: [
         'Learned to interact with customers, assisting them in selecting the best products, while also managing daily administrative tasks such as sales reporting, tracking KPIs, analyzing top-selling and underperforming products, and helping to manage the budget.',
