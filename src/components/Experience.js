@@ -40,11 +40,11 @@ const Experience = () => {
       description: [
         'Automated triathlon datasets, reducing manual effort in calculating laps and metrics.',
         'Collaborated on innovative solutions to complex problems through advanced research.',
-        'Developed race lap calculations using Python and R to enhance player performance analysis.',
+        'Developed race lap calculations using Python and PowerBI to enhance player performance analysis.',
       ],
-      tags: ['Python', 'R', 'Data Automation', 'Analytics'],
+      tags: ['Python', 'R', 'PowerBI', 'Analytics'],
       progress: 90,
-      learning: 'Gained deep insights into data automation and sports analytics using Python and R.'
+      learning: 'Gained deep insights into data automation and sports analytics using Python, R and PowerBI.'
     },
     {
       logo: `${process.env.PUBLIC_URL}/img/shoesandsox-logo.png`,
