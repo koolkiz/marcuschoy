@@ -55,7 +55,7 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Sales Assistant',
       description: [
-        'Learned to interact with customers, assisting them in selecting the best products, while also managing daily administrative tasks such as sales reporting, tracking KPIs, analyzing top-selling and underperforming products, and helping to manage the budget.',
+        'I developed strong administrative, analytical, and communication skills by assisting customers in product selection, managing daily tasks such as sales reporting, tracking KPIs, analyzing top-performing and underperforming products, and collaborating with management on budget oversight.',
         'Contributed to launching a new loyalty program, wrote documentation, and trained team members on the new system.',
       ],
       tags: ['Sales Analysis', 'Data Reporting', 'Cost Optimization'],
