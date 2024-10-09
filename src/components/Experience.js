@@ -38,7 +38,7 @@ const Experience = () => {
       location: 'Canberra, Australia',
       title: 'Data Analyst Intern',
       description: [
-        'Automated triathlon datasets, reducing manual effort in calculating laps and metrics.',
+        'Automated large sets of triathlon cycling national and international datasets, reducing manual effort by 95% in calculation and visulization of laps.',
         'Collaborated on innovative solutions to complex problems through advanced research.',
         'Developed race lap calculations using Python and PowerBI to enhance player performance analysis.',
       ],
