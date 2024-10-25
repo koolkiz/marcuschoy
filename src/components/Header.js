@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import useTypewriter from './hooks/useTypewriter';
 
 const Header = () => {
-  const { text, color } = useTypewriter(['Data Analytics', 'Research', 'Cloud Services'], 70, 50, 800);
+  const { text, color } = useTypewriter(['Data Engineering','Software Engineering', 'Research', 'Cloud Services'], 70, 50, 800);
 
   const headingColor = useColorModeValue('#0C0C0C', '#FBEAEB');
   const subheadingColor = useColorModeValue('#555555', '#EDEDED');
