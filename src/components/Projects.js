@@ -28,15 +28,15 @@ const projects = [
     hoverColor: 'rgba(255, 165, 0, 0.1)',
   },
   {
-    name: 'Wildlife Incidents Report',
-    link: 'https://github.com/acharyaarish/Python_Dashboard/blob/main/Wildlife%20Incidents%20ACT.pdf',
-    description: 'Detailed report on kangaroo incidents in the ACT from 2016 to 2024, identifying hotspots, peak times, and species involved.',
+    name: 'Finance Manager',
+    link: 'https://github.com/acharyaarish/Finance-Manager',
+    description: 'Personal finance management tool developed to help users monitor their income, manage expenses, and set savings goals—all through a simple, easy to use User Interface.',
     hoverColor: 'rgba(244, 67, 54, 0.1)',
   },
   {
-    name: 'IoT Project',
-    link: 'https://github.com/acharyaarish/Excel_Dashboard',
-    description: 'Enhanced home security system using Raspberry Pi, camera module, and Python to detect human activity and send alerts.',
+    name: 'Inventory Management',
+    link: 'https://github.com/acharyaarish/Inventory-Management',
+    description: 'This Python-based Inventory Management System is designed for retail environments to help manage users, inventory, and orders.',
     hoverColor: 'rgba(33, 150, 243, 0.1)',
   },
   {
