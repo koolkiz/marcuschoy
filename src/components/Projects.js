@@ -30,7 +30,7 @@ const projects = [
   {
     name: 'Finance Manager',
     link: 'https://github.com/acharyaarish/Finance-Manager',
-    description: 'Personal finance management tool developed to help users monitor their income, manage expenses, and set savings goals—all through a simple, easy to use User Interface.',
+    description: 'Finance management tool to help users monitor their income, manage expenses, and set savings goals.',
     hoverColor: 'rgba(244, 67, 54, 0.1)',
   },
   {
@@ -46,9 +46,9 @@ const projects = [
     hoverColor: 'rgba(255, 193, 7, 0.1)',
   },
   {
-    name: 'Professor',
+    name: 'Edtech Platform',
     link: 'https://paldip.com/',
-    description: 'Assisted with testing, debugging, and feature additions for an Edtech Platform, including implementing a QR-based attendance system.',
+    description: 'Improved backend with Firebase, fixed bugs, implemented PostHog for analytics, and optimized frontend with Lighthouse.,',
     hoverColor: 'rgba(76, 175, 80, 0.1)',
   },
 ];
