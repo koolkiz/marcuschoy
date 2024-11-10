@@ -20,37 +20,7 @@ const projects = [
     link: 'http://ec2-52-62-61-15.ap-southeast-2.compute.amazonaws.com/',
     description: 'Deatailed Wildlife Incidents Records with location in Canberra Region from Government Dataset. Made in Python and hosted in AWS EC2.',
     hoverColor: 'rgba(56, 142, 60, 0.1)',
-  },
-  {
-    name: 'Dog Breed Detector',
-    link: 'https://github.com/acharyaarish/dog_breed_detector',
-    description: 'Web game that challenges users to identify dog breeds from images using the Dog CEO API. Built with React, Node.js, and SQLite.',
-    hoverColor: 'rgba(255, 165, 0, 0.1)',
-  },
-  {
-    name: 'Finance Manager',
-    link: 'https://github.com/acharyaarish/Finance-Manager',
-    description: 'Finance management tool to help users monitor their income, manage expenses, and set savings goals.',
-    hoverColor: 'rgba(244, 67, 54, 0.1)',
-  },
-  {
-    name: 'Inventory Management',
-    link: 'https://github.com/acharyaarish/Inventory-Management',
-    description: 'This Python-based Inventory Management System is designed for retail environments to help manage users, inventory, and orders.',
-    hoverColor: 'rgba(33, 150, 243, 0.1)',
-  },
-  {
-    name: 'Excel Dashboard',
-    link: 'https://github.com/acharyaarish/Excel_Dashboard',
-    description: 'Excel Dashboard analyzing supermarket sales, utilizing PivotTables for data visualization and decision-making.',
-    hoverColor: 'rgba(255, 193, 7, 0.1)',
-  },
-  {
-    name: 'Edtech Platform',
-    link: 'https://paldip.com/',
-    description: 'Improved backend with Firebase, fixed bugs, implemented PostHog for analytics, and optimized frontend with Lighthouse.,',
-    hoverColor: 'rgba(76, 175, 80, 0.1)',
-  },
+  }
 ];
 
 const Projects = () => {

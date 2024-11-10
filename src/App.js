@@ -48,10 +48,10 @@ const App = () => {
           <Header />
           <Suspense fallback={<div>Loading...</div>}>
             <About />
-            <Skills />
-            <Projects />
             <Experience />
-            <Education />
+            <Projects />
+            <Skills />
+            {/* <Education /> */}
             <Contact />
           </Suspense>
         </div>

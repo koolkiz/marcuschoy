@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { FaGithub} from 'react-icons/fa';
 import { FaLinkedin} from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -95,69 +96,9 @@ const Contact = () => {
         >
           Get in Touch 📬
         </Heading>
-        <form onSubmit={handleSubmit}>
-          <VStack spacing={4} align="stretch">
-            <Input
-              placeholder="Your Name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              borderColor={borderColor}
-              bg={inputBg}
-              _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
-              isRequired
-              size="md"
-              borderRadius="md"
-              fontSize="sm"
-            />
-            <Input
-              placeholder="Your Email"
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              borderColor={borderColor}
-              bg={inputBg}
-              _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
-              isRequired
-              size="md"
-              borderRadius="md"
-              fontSize="sm"
-            />
-            <Textarea
-              placeholder="Your Message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              borderColor={borderColor}
-              bg={inputBg}
-              _hover={{ borderColor: inputFocusBorder }}
-              _focus={{ borderColor: inputFocusBorder, boxShadow: `0 0 0 1px ${inputFocusBorder}` }}
-              isRequired
-              size="md"
-              borderRadius="md"
-              fontSize="sm"
-            />
-          </VStack>
-          <Button
-            type="submit"
-            bg={buttonBg}
-            color="white"
-            _hover={{ bg: buttonHoverBg, transform: 'scale(1.03)' }}
-            size="md"
-            mt={6}
-            width="full"
-            transition="all 0.3s"
-            borderRadius="md"
-            fontSize="sm"
-          >
-            Send Message 💬
-          </Button>
-        </form>
+      
         <Flex justify="center" mt={6}>
-          <Link href="https://github.com/acharyaarish" isExternal>
+          <Link href="www.linkedin.com/in/choy-marcus" isExternal>
             <Button
               leftIcon={<FaGithub />}
               colorScheme="gray"
@@ -172,7 +113,7 @@ const Contact = () => {
               GitHub
             </Button>
           </Link>
-          <Link href="https://www.linkedin.com/in/arish-acharya-1a8a3b329/" isExternal>
+          <Link href="https://github.com/koolkiz" isExternal>
             <Button
               leftIcon={<FaLinkedin />}
               colorScheme="gray"
@@ -187,10 +128,24 @@ const Contact = () => {
               LinkedIn
             </Button>
           </Link>
+
+          <Link href="mailto:choyzwmarcus@gmail.com" isExternal>
+            <Button
+              leftIcon={<SiGmail />}
+              colorScheme="gray"
+              variant="outline"
+              fontSize="lg"
+              _hover={{ color: iconHoverColor, transform: 'scale(1.05)' }}
+              size="md"
+              fontWeight="bold"
+              borderRadius="md"
+              mr={4}
+            >
+              Gmail
+            </Button>
+          </Link>
+          
         </Flex>
-        <Box mt={6} fontSize="xs" color={textColor}>
-          &copy; 2024 Arish Acharya - All rights reserved.
-        </Box>
       </Container>
     </Box>
   );

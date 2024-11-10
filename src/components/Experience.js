@@ -13,6 +13,9 @@ import {
   WrapItem,
   useColorModeValue,
   Link,
+  List,
+  ListItem,
+  ListIcon
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
@@ -30,72 +33,53 @@ const Experience = () => {
 
   const experiences = [
     {
-      logo: `${process.env.PUBLIC_URL}/img/austriathlon-logo.png`,
-      date: 'Mar 2024 – Jul 2024',
-      company: 'AusTriathlon',
-      link: 'https://www.triathlon.org.au/',
-      hoverColor: 'rgba(33, 150, 243, 0.15)',
-      location: 'Canberra, Australia',
-      title: 'Data Analyst Intern',
+      logo: `${process.env.PUBLIC_URL}/assets/SAP.png`,
+      date: 'Jan 2024 – Aug 2024',
+      company: 'SAP',
+      // hoverColor: 'rgba(33, 150, 243, 0.15)',
+      // location: 'Canberra, Australia',
+      title: 'AI Engineer Intern',
       description: [
-        'Automated large sets of triathlon cycling national and international datasets, reducing manual effort by 95% in calculation and visulization of laps.',
-        'Collaborated on innovative solutions to complex problems through advanced research.',
-        'Developed race lap calculations using Python and PowerBI to enhance player performance analysis.',
+        'Design and implemented features for a Retrieval-Augmented Generation (RAG) use cases, such as chat history, intent detection, and prompt engineering, to enhance productivity for users',
+        'Designed and implemented a CI/CD pipeline using Jenkins, enabling automated testing, integration, and deployment for backend services',
+        'Build and deployed Dockerised applications onto Cloud Floundry on SAP Business Technology Platform',
+        'Communicated directly to understand business needs and managing business stakeholders’ expectations',
+        'Explore Agents and Knowledge graph for RAG use case'
       ],
-      tags: ['Python', 'R', 'PowerBI', 'Analytics'],
-      progress: 90,
-      learning: 'Gained deep insights into data automation and sports analytics using Python, R and PowerBI.'
+      tags: ['Python', 'LangChain', 'Docker', 'Jenkins' ,'SAP BTP', 'SAP HANA CLOUD'],
+      // progress: 90,
+      // learning: 'Gained deep insights into data automation and sports analytics using Python, R and PowerBI.'
     },
     {
-      logo: `${process.env.PUBLIC_URL}/img/shoesandsox-logo.png`,
-      date: 'August 2022 – Present',
-      company: 'Shoes and Sox',
-      link: 'https://www.shoesandsox.com.au',
-      hoverColor: 'rgba(255, 165, 0, 0.15)',
-      location: 'Sydney, Australia',
-      title: 'Sales Assistant',
+      logo: `${process.env.PUBLIC_URL}/assets/Synapxe.jpg`,
+      date: 'August 2024 – Present',
+      company: 'Synaxpe',
+      // link: 'https://www.shoesandsox.com.au',
+      // hoverColor: 'rgba(255, 165, 0, 0.15)',
+      // location: 'Sydney, Australia',
+      title: 'AI Developer Intern',
       description: [
-        'I developed strong administrative, analytical, and communication skills by assisting customers in product selection, managing daily tasks such as sales reporting, tracking KPIs, analyzing top-performing and underperforming products, and collaborating with management on budget oversight.',
-        'Contributed to launching a new loyalty program, wrote documentation, and trained team members on the new system.',
+        'Developed new Generative AI features/tools to be deployed onto Generative AI Platform to boost users productivity',
       ],
-      tags: ['Sales Analysis', 'Data Reporting', 'Cost Optimization'],
-      progress: 90,
-      learning: 'Learned how data-driven decisions impact sales and efficiency.'
+      tags: ['Python', 'LangChain', 'Azure AI'],
+      // progress: 90,
+      // learning: 'Learned how data-driven decisions impact sales and efficiency.'
     },
     {
-      logo: `${process.env.PUBLIC_URL}/img/nepaloilcorp-logo.png`,
-      date: 'Nov 2020 – Nov 2021',
-      company: 'Nepal Oil Corporation',
-      link: 'https://noc.org.np/',
-      hoverColor: 'rgba(244, 67, 54, 0.15)',
-      location: 'Kathmandu, Nepal',
-      title: 'IT Data & Systems Analyst',
+      logo: `${process.env.PUBLIC_URL}/assets/ML.jpg`,
+      date: 'Feb 2021 – June 2021',
+      company: 'ML Research Consultants',
+      // hoverColor: 'rgba(33, 150, 243, 0.15)',
+      // location: 'Canberra, Australia',
+      title: 'Research Assistant',
       description: [
-        'Collaborated with the project manager and stakeholders to lead teams in configuring networks across all branches nationwide.',
-        'Resolved technical issues remotely and documented IT systems, including disaster recovery protocols and maintenance guides.',
-        'Customized SAP S4 Hana to meet organizational needs and executed SQL queries to optimize system performance.',
+        'Analysed and cleaned data obtained from survey fieldworks for a senior researcher',
+        'Worked on large amount of data using computing applications namely Excel and SPSS'
       ],
-      tags: ['ERP', 'IT Management', 'Training'],
-      progress: 95,
-      learning: 'Mastered ERP deployment and IT management, ensuring system uptime and effective training.'
-    },
-    {
-      logo: `${process.env.PUBLIC_URL}/img/outsource-array-logo.png`,
-      date: 'Nov 2019 – Feb 2020',
-      company: 'Outsource Array',
-      link: 'https://www.outsourcearray.com',
-      hoverColor: 'rgba(76, 175, 80, 0.15)',
-      location: 'Kathmandu, Nepal',
-      title: 'Network Engineer Intern',
-      description: [
-        'Enhanced network reliability through LAN/WAN optimizations.',
-        'Improved security with VLAN configurations and tailored access controls.',
-        'Communicated changes effectively to stakeholders, enhancing operational efficiency.',
-      ],
-      tags: ['Networking', 'Security', 'LAN/WAN'],
-      progress: 80,
-      learning: 'Gained experience in networking and security, focusing on performance optimization.'
-    },
+      tags: ['Excel', 'SPSS'],
+      // progress: 90,
+      // learning: 'Gained deep insights into data automation and sports analytics using Python, R and PowerBI.'
+    }
   ];
 
   return (
@@ -115,11 +99,11 @@ const Experience = () => {
         </Heading>
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
           {experiences.map((experience, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ translateY: -10 }}
-              transition={{ duration: 0.3 }}
-            >
+            // <motion.div
+            //   key={index}
+            //   whileHover={{ translateY: -10 }}
+            //   transition={{ duration: 0.3 }}
+            // >
               <Box
                 bg={cardBg}
                 color={textColor}
@@ -139,25 +123,25 @@ const Experience = () => {
                   transition: 'opacity 0.3s ease-in-out',
                   opacity: 0,
                 }}
-                _hover={{
-                  _before: {
-                    opacity: 1,
-                  },
-                  boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.2)',
-                  transform: 'translateY(-10px)',
-                }}
+                // _hover={{
+                //   _before: {
+                //     opacity: 1,
+                //   },
+                //   boxShadow: '0px 20px 30px rgba(0, 0, 0, 0.2)',
+                //   transform: 'translateY(-10px)',
+                // }}
                 transition="background-color 0.3s ease, transform 0.3s ease"
                 h="100%"
                 display="flex"
                 flexDirection="column"
-                justifyContent="space-between"
+                justifyContent="start"
               >
                 <Flex align="center" mb={4} zIndex={1} position="relative">
                   <Image
                     src={experience.logo}
                     alt={experience.company}
-                    borderRadius="full"
-                    boxSize={{ base: "60px", md: "70px" }}
+                    // borderRadius="full"
+                    boxSize={{ base: "180px", md: "190px" }}
                     mr={4}
                     objectFit="contain"
                   />
@@ -186,7 +170,7 @@ const Experience = () => {
                 </Box>
                 <Box as="ul" pl={4} mt={4} color={textColor} textAlign="left" zIndex={1} position="relative">
                   {experience.description.map((desc, i) => (
-                    <Text as="li" mb={3} key={i} display="flex" alignItems="center" fontSize="sm">
+                    <Text as="li" mb={3} key={i} display="flex" alignItems="start" fontSize="sm">
                       <Box as="span" color={headingColor} mr={2}>•</Box> {desc}
                     </Text>
                   ))}
@@ -197,10 +181,10 @@ const Experience = () => {
                       <Tag
                         size="md"
                         variant="solid"
-                        colorScheme="teal"
+                        colorScheme="blue"
                         borderRadius="full"
                         cursor="pointer"
-                        _hover={{ transform: "scale(1.2)", backgroundColor: tagHoverColor }}
+                        // _hover={{ transform: "scale(1.2)", backgroundColor: tagHoverColor }}
                         transition="all 0.3s ease-in-out"
                       >
                         {tag}
@@ -208,7 +192,7 @@ const Experience = () => {
                     </WrapItem>
                   ))}
                 </Wrap>
-                <Box mt={4}>
+                {/* <Box mt={4}>
                   <Text fontSize="sm" fontWeight="bold" color={headingColor}>
                     Impact & Performance:
                   </Text>
@@ -221,9 +205,9 @@ const Experience = () => {
                   <Text fontSize="sm" mt={2} color={secondaryTextColor}>
                     {experience.learning}
                   </Text>
-                </Box>
+                </Box> */}
               </Box>
-            </motion.div>
+            // </motion.div>
           ))}
         </SimpleGrid>
       </Container>

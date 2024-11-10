@@ -8,30 +8,33 @@ import {
   Heading,
   useColorModeValue,
   Container,
+  Image
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import {
   FaPython, FaReact, FaNodeJs, FaAws, FaCloud, FaDatabase, FaLinux, FaTools,
   FaRProject, FaJs, FaGitAlt, FaTable, FaChartLine, FaLaptopCode
 } from 'react-icons/fa';
+import StackIcon from "tech-stack-icons";
+
+const pythonlogo =<StackIcon name="python" />
 
 const skills = [
-  { name: 'Python', icon: FaPython, description: 'Data analysis and automation' },
-  { name: 'R', icon: FaRProject, description: 'Statistical computing' },
-  { name: 'JavaScript', icon: FaJs, description: 'Web development' },
-  { name: 'React', icon: FaReact, description: 'Frontend development' },
-  { name: 'Node.js', icon: FaNodeJs, description: 'Backend development' },
-  { name: 'Git', icon: FaGitAlt, description: 'Version control' },
-  { name: 'Linux', icon: FaLinux, description: 'System administration' },
-  { name: 'Pandas', icon: FaTools, description: 'Data manipulation' },
-  { name: 'AWS', icon: FaAws, description: 'Cloud services' },
-  { name: 'Azure', icon: FaCloud, description: 'Cloud computing' },
-  { name: 'GCP', icon: FaCloud, description: 'Google Cloud Platform' },
-  { name: 'SQL', icon: FaDatabase, description: 'Database management' },
-  { name: 'Tableau', icon: FaTable, description: 'Data visualization' },
-  { name: 'PowerBI', icon: FaChartLine, description: 'Business analytics' },
-  { name: 'CISCO', icon: FaLaptopCode, description: 'Networking' },
-  { name: 'SAP', icon: FaTools, description: 'Enterprise software' },
+  { name: 'Python', icon: "python.png", description: '' },
+  { name: 'R', icon: "r.png", description: '' },
+  // { name: 'JavaScript', icon: FaJs, description: 'Web development' },
+  // { name: 'React', icon: FaReact, description: 'Frontend development' },
+  // { name: 'Git', icon: FaGitAlt, description: 'Version control' },
+  // { name: 'Linux', icon: FaLinux, description: 'System administration' },
+  // { name: 'Pandas', icon: FaTools, description: 'Data manipulation' },
+  // { name: 'AWS', icon: FaAws, description: 'Cloud services' },
+  // { name: 'Azure', icon: FaCloud, description: 'Cloud computing' },
+  // { name: 'GCP', icon: FaCloud, description: 'Google Cloud Platform' },
+  { name: 'SQL', icon: "mysql.png", description: 'Database management' },
+  // { name: 'Tableau', icon: FaTable, description: 'Data visualization' },
+  // { name: 'PowerBI', icon: FaChartLine, description: 'Business analytics' },
+  // { name: 'CISCO', icon: FaLaptopCode, description: 'Networking' },
+  // { name: 'SAP', icon: FaTools, description: 'Enterprise software' },
 ];
 
 const Skills = () => {
@@ -72,7 +75,13 @@ const Skills = () => {
                 transition="transform 0.2s ease"
                 _hover={{ transform: 'scale(1.08)' }}
               >
-                <Icon as={skill.icon} boxSize="50px" color={iconColor} mb={4} />
+                <Image 
+                  src = {`${process.env.PUBLIC_URL}/logo/${skill.icon}`}
+                  boxSize="50px"
+                  // borderRadius="full"
+                  // fit="cover" 
+                  />
+      
                 <Text fontWeight="bold" fontSize="lg" color={textColor}>
                   {skill.name}
                 </Text>

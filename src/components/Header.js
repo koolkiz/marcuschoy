@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import useTypewriter from './hooks/useTypewriter';
 
 const Header = () => {
-  const { text, color } = useTypewriter(['Data Engineering','Software Engineering', 'Research', 'Cloud Services'], 70, 50, 800);
+  const { text, color } = useTypewriter(['Hello, I am Marcus'], 70, 50, 800);
 
   const headingColor = useColorModeValue('#0C0C0C', '#FBEAEB');
   const subheadingColor = useColorModeValue('#555555', '#EDEDED');
@@ -72,7 +72,7 @@ const Header = () => {
       </video>
 
       <Box maxW="80%" mx="auto">
-        <Heading
+        {/* <Heading
           as={motion.h1}
           size="3xl"
           color={headingColor}
@@ -84,9 +84,9 @@ const Header = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          Hello, I'm Arish
-        </Heading>
-        <Heading
+          Hello, I'm Marcus
+        </Heading> */}
+        {/* <Heading
           as={motion.h2}
           size="xl"
           color={subheadingColor}
@@ -100,7 +100,7 @@ const Header = () => {
           transition={{ duration: 0.8 }}
         >
           I Specialize in
-        </Heading>
+        </Heading> */}
         <Box
           as={motion.div}
           fontSize={{ base: "2xl", md: "3xl" }}
@@ -115,18 +115,20 @@ const Header = () => {
           {text.split('').map((char, index) => (
             <Text
               as="span"
+              fontSize={{ base: "5xl", md: "4xl" }}
               key={index}
-              color={color}
+              color={subheadingColor}
               animation="fadeIn 1s ease-in-out"
             >
               {char}
+              {/* Hello, I'm Marcus */}
             </Text>
           ))}
         </Box>
         <Box display="flex" justifyContent="center" alignItems="center" mt={4} flexWrap="wrap">
           <Button
             as="a"
-            href={`${process.env.PUBLIC_URL}/img/Arish_Acharya_Resume.pdf`}
+            href={`${process.env.PUBLIC_URL}/assets/Choy_Zhen_Wen_Marcus_Resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             bg={resumeButtonBg}
@@ -151,7 +153,7 @@ const Header = () => {
           </Button>
           <Button
             as="a"
-            href="https://github.com/acharyaarish"
+            href="https://github.com/koolkiz"
             target="_blank"
             rel="noopener noreferrer"
             bg={githubButtonBg}

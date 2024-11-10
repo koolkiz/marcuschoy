@@ -3,6 +3,7 @@ import {
   Box,
   Flex,
   IconButton,
+  Text,
   Link as ChakraLink,
   useDisclosure,
   Stack,
@@ -37,7 +38,7 @@ const Navbar = () => {
     { name: 'Skills', id: 'skills' },
     { name: 'Projects', id: 'projects' },
     { name: 'Experience', id: 'experience' },
-    { name: 'Education', id: 'education' },
+    // { name: 'Education', id: 'education' },
     { name: 'Contact', id: 'contact' },
   ];
 
@@ -55,15 +56,18 @@ const Navbar = () => {
     >
       <Flex h="full" alignItems="center" justifyContent="space-between">
         <ChakraLink as={ScrollLink} to="header" smooth duration={500} offset={-50}>
-          <Image
-            src={`${process.env.PUBLIC_URL}/img/logo-updated.png`}
-            alt="Logo"
+          {/* <Image
+            src={`${process.env.PUBLIC_URL}/assets/me.png`}
+            alt="Ⓜ️
             boxSize={logoSize}
             objectFit="contain"
             cursor="pointer"
             transition="transform 0.3s ease-in-out"
             _hover={{ transform: 'scale(1.08)' }}
-          />
+          /> */}
+          <Text>
+            Marcus Choy
+          </Text>
         </ChakraLink>
 
         <HStack as="nav" spacing={5} display={{ base: 'none', md: 'flex' }} mx="auto">
@@ -91,7 +95,7 @@ const Navbar = () => {
         </HStack>
 
         <Flex alignItems="center">
-          <Tooltip label={isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode'} fontSize="xs" hasArrow>
+          {/* <Tooltip label={isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode'} fontSize="xs" hasArrow>
             <IconButton
               onClick={toggleColorMode}
               icon={isLightMode ? <MoonIcon /> : <SunIcon />}
@@ -102,7 +106,7 @@ const Navbar = () => {
               boxSize={iconSize}
               transition="all 0.3s ease-in-out"
             />
-          </Tooltip>
+          </Tooltip> */}
 
           <IconButton
             size="lg"

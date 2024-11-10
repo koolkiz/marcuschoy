@@ -7,6 +7,7 @@ import {
   useColorModeValue,
   VStack,
   Flex,
+  Image
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
@@ -41,17 +42,12 @@ const About = () => {
             borderTopRightRadius="50%"
             borderBottomRightRadius="50%"
           >
-            <Text
-              as={motion.h3}
-              fontSize={{ base: '2xl', md: '3xl' }}
-              color={quoteColor}
-              fontWeight="bold"
-              lineHeight="short"
-              whileHover={{ scale: 1.05 }}
-              transition="0.3s"
-            >
-              "Data is the new oil, and I’m here to refine it!" ⚙️
-            </Text>
+            < Image 
+              src = {`${process.env.PUBLIC_URL}/assets/me.png`}
+              boxSize="300px"
+              borderRadius="full"
+              fit="cover" 
+              />
           </Box>
 
           {/* 70% Text Section */}
@@ -71,13 +67,10 @@ const About = () => {
               About Me 👋
             </Heading>
             <Text fontSize="lg" fontWeight="bold" lineHeight="short" textAlign={{ base: 'center', md: 'left' }}>
-              Tech Enthusiast, Coffee Lover & Adventurer ☕🏔️
+              Hello, my name is Marcus :)
             </Text>
             <Text fontSize="md" lineHeight="taller" textAlign={{ base: 'center', md: 'left' }} color={textColor}>
-              From fixing computers as the neighborhood tech guy to setting up networks and working on ERP systems, I've
-              always loved tech. My journey has taken me from my uncle’s logistics business to my father’s media
-              company, and now to Australia, where I’ve automated data for Austriathlon. I’m constantly refining my skills
-              in data science and brewing the best coffee at home. Even my pug 🐕 agrees, but let’s keep that between us!
+            I am currently a Final Year Data Science and Analytics Undergraduate at NUS. Driven by a passion for unlocking insights from data, I am a passionate data scientist with a focus on machine learning and generative AI. I am fascinated by the potential of these technologies to solve real-world problems and push the boundaries of creativity!
             </Text>
           </VStack>
         </Flex>
