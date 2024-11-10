@@ -1,6 +1,6 @@
 {
-  "homepage": "https://arish.app",
-  "name": "arish-portfolio",
+  "homepage": "https://choymarcus.app",
+  "name": "choymarcus-portfolio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,6 +28,7 @@
     "react-toastify": "^10.0.5",
     "react-tsparticles": "^2.12.2",
     "styled-components": "^6.1.12",
+    "tech-stack-icons": "^2.1.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -58,7 +59,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
-    "gh-pages": "^6.1.1",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.6"
   }
