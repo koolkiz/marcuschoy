@@ -22,26 +22,36 @@ const pythonlogo =<StackIcon name="python" />
 const skills = [
   { name: 'Python', icon: "python.png", description: '' },
   { name: 'R', icon: "r.png", description: '' },
-  // { name: 'JavaScript', icon: FaJs, description: 'Web development' },
+  { name: 'Java', icon: "java.png", description: 'Web development' },
   // { name: 'React', icon: FaReact, description: 'Frontend development' },
-  // { name: 'Git', icon: FaGitAlt, description: 'Version control' },
+  { name: 'Git', icon: "git.png", description: 'Version control' },
   // { name: 'Linux', icon: FaLinux, description: 'System administration' },
-  // { name: 'Pandas', icon: FaTools, description: 'Data manipulation' },
+  { name: 'Pandas', icon: "pandas.png", description: 'Machine Learning' },
+  { name: 'Keras', icon: "keras.png", description: 'Machine Learning' },
+  { name: 'Tensorflow', icon: "tf.png", description: 'Machine Learning' },
+  { name: 'Numpy', icon: "numpy.png", description: 'Machine Learning' },
+  { name: 'Scikit learn', icon: "sck.png", description: 'Machine Learning' },
+  { name: 'LangChain', icon: "langchain.png", description: 'Machine Learning' },
+  { name: 'Flask', icon: "flask.png", description: 'Web Development' },
+  { name: 'FastAPI', icon: "fastapi.png", description: 'Web Development' },
+  { name: 'Git', icon: "git.png", description: 'Version Control' },
+  { name: 'Docker', icon: "docker.png", description: '' },
+  { name: 'Jenkins', icon: "jenkins.png", description: '' },
+  { name: 'Streamlit', icon: "streamlit.png", description: '' },
   // { name: 'AWS', icon: FaAws, description: 'Cloud services' },
   // { name: 'Azure', icon: FaCloud, description: 'Cloud computing' },
   // { name: 'GCP', icon: FaCloud, description: 'Google Cloud Platform' },
   { name: 'SQL', icon: "mysql.png", description: 'Database management' },
-  // { name: 'Tableau', icon: FaTable, description: 'Data visualization' },
   // { name: 'PowerBI', icon: FaChartLine, description: 'Business analytics' },
   // { name: 'CISCO', icon: FaLaptopCode, description: 'Networking' },
   // { name: 'SAP', icon: FaTools, description: 'Enterprise software' },
 ];
 
 const Skills = () => {
-  const bg = useColorModeValue('#e0f7fa', '#263238'); 
+  const bg = useColorModeValue('#E1F3F3', '#263238'); 
   const cardBg = useColorModeValue('#ffffff', '#37474f'); 
   const textColor = useColorModeValue('#212121', '#e0e0e0');
-  const iconColor = useColorModeValue('#00796b', '#4caf50');
+  const iconColor = useColorModeValue('#2B6CB0', '#4caf50');
   const descriptionColor = useColorModeValue('#546e7a', '#b0bec5');
 
   return (
