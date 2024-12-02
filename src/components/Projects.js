@@ -16,9 +16,15 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
-    name: 'Python Dashboard',
-    link: 'http://ec2-52-62-61-15.ap-southeast-2.compute.amazonaws.com/',
-    description: 'Deatailed Wildlife Incidents Records with location in Canberra Region from Government Dataset. Made in Python and hosted in AWS EC2.',
+    name: 'Passion8',
+    link: 'https://github.com/koolkiz/Passion8',
+    description: 'A data-driven framework leveraging AI and data analysis to optimize e-commerce operations. \n Churn analysis, Forecasting, Computer Vision, Sentiment Analysis, and more.',
+    hoverColor: 'rgba(56, 142, 60, 0.1)',
+  },
+  {
+    name: 'Quora Question Pairs',
+    link: 'https://github.com/koolkiz/CS3244_Quora',
+    description: 'A machine learning project to predict if 2 questions are similary or not through natural language processing',
     hoverColor: 'rgba(56, 142, 60, 0.1)',
   }
 ];
@@ -47,6 +53,8 @@ const Projects = () => {
             >
               <Box
                 bg={cardBgColor}
+                width="330px" // Set a fixed width
+                height="500px" // Set a fixed height
                 borderRadius="xl"
                 boxShadow="2xl"
                 overflow="hidden"
@@ -81,7 +89,7 @@ const Projects = () => {
                     height="200px"
                   >
                     <Image
-                      src={`${process.env.PUBLIC_URL}/img/${project.name.toLowerCase().replace(/\s+/g, '-')}.png`}
+                      src={`${process.env.PUBLIC_URL}/assets/${project.name.toLowerCase().replace(/\s+/g, '-')}.png`}
                       alt={project.name}
                       borderRadius="lg"
                       objectFit="cover"
@@ -93,7 +101,7 @@ const Projects = () => {
                     <Heading as="h3" size="md" color={linkColor} mb={3}>
                       {project.name}
                     </Heading>
-                    <Text fontSize="sm" color={textColor} noOfLines={3}>
+                    <Text fontSize="sm" color={textColor} >
                       {project.description}
                     </Text>
                   </Box>
