@@ -26,6 +26,25 @@ const projects = [
     link: 'https://github.com/koolkiz/CS3244_Quora',
     description: 'A machine learning project to predict if 2 questions are similary or not through natural language processing',
     hoverColor: 'rgba(56, 142, 60, 0.1)',
+  },
+  {
+    name: 'Health5',
+    link: 'https://github.com/koolkiz/DSA4262_Health5',
+    description: 'We propose a dynamic multimodal framework for breast cancer diagnosis, integrating clin- ical notes and medical images through an attention-based fusion mechanism.',
+    hoverColor: 'rgba(56, 142, 60, 0.1)',
+  }
+  ,
+  {
+    name: 'Chat with Documents',
+    link: 'https://github.com/koolkiz/ChatPDF',
+    description: 'A Chat Companion to query any uploaded documents!',
+    hoverColor: 'rgba(56, 142, 60, 0.1)',
+  },
+  {
+    name: 'ScamSnipers',
+    link: 'https://github.com/sweeenlim/scamsnipers',
+    description: 'A study that explores machine learning techniques to enhance fraud detection, leveraging a dataset containing detailed insurance claim records. The objective is to accurately classify claims as fraudulent or non fraudulent, improving both financial security and operational efficiency.',
+    hoverColor: 'rgba(56, 142, 60, 0.1)',
   }
 ];
 
