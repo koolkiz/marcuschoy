@@ -43,7 +43,7 @@ const projects = [
   {
     name: 'ScamSnipers',
     link: 'https://github.com/sweeenlim/scamsnipers',
-    description: 'A study that explores machine learning techniques to enhance fraud detection, leveraging a dataset containing detailed insurance claim records. The objective is to accurately classify claims as fraudulent or non fraudulent, improving both financial security and operational efficiency.',
+    description: 'A study that explores machine learning techniques to enhance fraud detection, leveraging a dataset containing detailed insurance claim records.',
     hoverColor: 'rgba(56, 142, 60, 0.1)',
   }
 ];
